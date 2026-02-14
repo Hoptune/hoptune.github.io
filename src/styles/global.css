@@ -121,11 +121,12 @@ main {
   list-style: none;
   cursor: pointer;
   color: var(--text);
-  font-size: 0.95rem;
-  border: 1px solid #d7deea;
-  border-radius: 8px;
-  padding: 0.35rem 0.6rem;
-  background: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  padding: 0.1rem 0.2rem;
+  background: transparent;
 }
 
 .mobile-menu summary::-webkit-details-marker {
@@ -134,15 +135,17 @@ main {
 
 .mobile-menu[open] summary {
   margin-bottom: 0.35rem;
+  text-decoration: underline;
+  text-underline-offset: 0.18rem;
 }
 
 .mobile-menu ul {
   list-style: none;
   margin: 0;
-  padding: 0.3rem;
-  border: 1px solid #d7deea;
-  border-radius: 8px;
-  background: #ffffff;
+  padding: 0.2rem 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .mobile-menu li + li {
@@ -151,7 +154,7 @@ main {
 
 .mobile-menu a {
   display: block;
-  padding: 0.3rem 0.45rem;
+  padding: 0.25rem 0.1rem;
 }
 
 main > section,
@@ -374,10 +377,6 @@ main > section + article {
 }
 
 @media (max-width: 860px) {
-  .site-nav .brand-title {
-    display: none;
-  }
-
   .site-nav .desktop-links {
     display: none;
   }
