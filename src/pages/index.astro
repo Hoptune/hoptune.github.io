@@ -11,7 +11,7 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description ?? ""} canonicalPath="/">
-  <section class="hero-template">
+  <section class="hero-template home-hero">
     <div class="hero-template-content">
       <figure class="hero-avatar-wrap">
         <img class="hero-avatar" src={profile.photoPath} alt={`Portrait of ${profile.fullName}`} loading="eager" />
@@ -25,16 +25,20 @@ const { Content } = await entry.render();
         </article>
         <div class="hero-actions">
           <div class="hero-socials" aria-label="Social links">
-            <a href={`mailto:${profile.email}`} aria-label="Email">
+            <a href={`mailto:${profile.email}`} aria-label="Email" data-tip="Email">
               <img src="/icons/email.svg" alt="" />
             </a>
-            <a href={profile.socials.googleScholar || "https://scholar.google.com/"} aria-label="Google Scholar">
+            <a
+              href={profile.socials.googleScholar || "https://scholar.google.com/"}
+              aria-label="Google Scholar"
+              data-tip="Google Scholar"
+            >
               <img src="/icons/google-scholar.svg" alt="" />
             </a>
-            <a href={profile.socials.github} aria-label="GitHub">
+            <a href={profile.socials.github} aria-label="GitHub" data-tip="GitHub">
               <img src="/icons/github.svg" alt="" />
             </a>
-            <a href={profile.socials.orcid} aria-label="ORCID">
+            <a href={profile.socials.orcid} aria-label="ORCID" data-tip="ORCID">
               <img src="/icons/orcid.svg" alt="" />
             </a>
           </div>

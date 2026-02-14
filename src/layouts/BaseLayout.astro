@@ -12,6 +12,7 @@ interface Props {
 }
 
 const { title, description, canonicalPath } = Astro.props;
+const isHomePage = Astro.url.pathname === "/";
 ---
 
 <!doctype html>
@@ -23,7 +24,7 @@ const { title, description, canonicalPath } = Astro.props;
     <SeoHead title={title} description={description} canonicalPath={canonicalPath} />
     <Analytics />
   </head>
-  <body>
+  <body class={isHomePage ? "home-page" : undefined}>
     <div class="page-shell">
       <Nav />
       <main>

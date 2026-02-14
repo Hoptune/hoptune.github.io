@@ -3,5 +3,8 @@ import { profile } from "../data/profile";
 ---
 
 <footer class="site-footer">
+  <p>
+    Contact: <a href={`mailto:${profile.email}`}>{profile.email}</a>
+  </p>
   <p>&copy; {new Date().getFullYear()} {profile.fullName}. All rights reserved.</p>
 </footer>
