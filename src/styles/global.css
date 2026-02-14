@@ -113,6 +113,47 @@ main {
   text-underline-offset: 0.2rem;
 }
 
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu summary {
+  list-style: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.95rem;
+  border: 1px solid #d7deea;
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  background: #ffffff;
+}
+
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-menu[open] summary {
+  margin-bottom: 0.35rem;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem;
+  border: 1px solid #d7deea;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.mobile-menu li + li {
+  margin-top: 0.2rem;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 0.3rem 0.45rem;
+}
+
 main > section,
 main > article {
   background: transparent;
@@ -333,9 +374,16 @@ main > section + article {
 }
 
 @media (max-width: 860px) {
-  .site-nav {
-    flex-direction: column;
-    align-items: flex-start;
+  .site-nav .brand-title {
+    display: none;
+  }
+
+  .site-nav .desktop-links {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
   }
 
   .button-secondary {
