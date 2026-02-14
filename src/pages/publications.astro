@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PublicationList from "../components/PublicationList.astro";
+import { parseBibTeX } from "../lib/bibtex";
+import bibRaw from "../data/publications.bib?raw";
+
+const publications = parseBibTeX(bibRaw);
+---
+
+<BaseLayout
+  title="Publications"
+  description="Peer-reviewed publications and selected preprints."
+  canonicalPath="/publications"
+>
+  <section>
+    <h1>Publications</h1>
+    <p>Publications are maintained from a BibTeX source file for consistent updates.</p>
+  </section>
+
+  <PublicationList items={publications} />
+</BaseLayout>

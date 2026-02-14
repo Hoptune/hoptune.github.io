@@ -1,0 +1,34 @@
+---
+import type { Publication } from "../lib/bibtex";
+
+interface Props {
+  items: Publication[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="pub-list">
+  {
+    items.map((pub) => (
+      <li>
+        <article>
+          <h3>{pub.title}</h3>
+          <p class="pub-meta">
+            <span>{pub.authors.join(", ")}</span>
+            <span> · </span>
+            <span>{pub.venue}</span>
+            <span> · </span>
+            <span>{pub.year}</span>
+          </p>
+          <p class="pub-links">
+            {pub.url && <a href={pub.url}>Link</a>}
+            {pub.doi && <a href={`https://doi.org/${pub.doi}`}>DOI</a>}
+            {pub.pdf && <a href={pub.pdf}>PDF</a>}
+            {pub.code && <a href={pub.code}>Code</a>}
+          </p>
+        </article>
+      </li>
+    ))
+  }
+</ul>

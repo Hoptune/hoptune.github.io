@@ -1,0 +1,55 @@
+% !BIB program = biber
+\documentclass[letterpaper,11pt]{article}
+
+% Choose bibliography style for formatting list of publications
+\usepackage[style=ieee,url=false,doi=false,maxbibnames=99,
+defernumbers,sortcites,sorting=ydnt,dashed=false]{biblatex}
+\bibliography{sections/papers}
+
+% Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
+\def\theme{MidnightBlue}
+
+% More predefined colors can be found in 
+% https://en.wikibooks.org/wiki/LaTeX/Colors
+% Example photograph taken from Wikimedia Commons
+% https://commons.wikimedia.org/wiki/File:Kiara_Krit_passport.jpg
+
+\usepackage{simplecv}
+
+\boldname{Surname}{Name}{N.}
+
+\begin{document}
+
+% Heading
+\headinginline{\textsc{Zhiwei Shao}}{
+    Email: \email{zwshao@sjtu.edu.cn} \\
+    % Phone: (+86) 189-5519-3426\\
+    Website: \website{zwshao.com} \\ 
+    GitHub: \github{Hoptune}\\
+    ORCID: \orcid{0000-0002-4585-3985}
+}
+
+% \headingphoto{Name Surname}{
+%     Website: \website{example.com} \\ 
+%     Email: \email{example@example.edu} \\
+%     LinkedIn: \linkedin{name-surname} \\
+%     GitHub: \github{example}
+% }{photo.jpg}
+
+% Page One
+% \import{sections/}{interests.tex}
+\import{sections/}{education.tex}
+% \import{sections/}{position.tex}
+% \import{sections/}{references.tex}
+\import{sections/}{publications.tex}
+\import{sections/}{talks.tex}
+% \import{sections/}{research.tex}
+% \import{sections/}{short_projects.tex}
+\import{sections/}{awards.tex}
+% \import{sections/}{skills.tex}
+\import{sections/}{outreach.tex}
+% \sidebyside
+    % {\import{sections/}{skills.tex}}
+    % {\import{sections/}{languages.tex}}
+% \import{sections/}{extracurricular.tex}
+\end{document}

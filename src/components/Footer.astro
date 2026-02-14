@@ -1,0 +1,14 @@
+---
+import { profile } from "../data/profile";
+---
+
+<footer class="site-footer">
+  <p>&copy; {new Date().getFullYear()} {profile.fullName}. All rights reserved.</p>
+  <p>
+    {profile.socials.website && <a href={profile.socials.website}>Website</a>}
+    {profile.socials.website && profile.socials.orcid && <span aria-hidden="true"> · </span>}
+    {profile.socials.orcid && <a href={profile.socials.orcid}>ORCID</a>}
+    {profile.socials.orcid && profile.socials.github && <span aria-hidden="true"> · </span>}
+    {profile.socials.github && <a href={profile.socials.github}>GitHub</a>}
+  </p>
+</footer>

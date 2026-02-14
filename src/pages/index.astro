@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { profile } from "../data/profile";
+---
+
+<BaseLayout title="Home" description="Academic profile and current research overview." canonicalPath="/">
+  <section class="hero">
+    <p class="eyebrow">{profile.institution}</p>
+    <h1>{profile.fullName}</h1>
+    <p class="lead">{profile.title}</p>
+    <p>{profile.bio}</p>
+    <p class="cta-row">
+      <a class="button" href="/publications">View Publications</a>
+      <a class="button button-secondary" href="/cv">View CV</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Research Interests</h2>
+    <ul>
+      {profile.researchInterests.map((area) => <li>{area}</li>)}
+    </ul>
+  </section>
+</BaseLayout>

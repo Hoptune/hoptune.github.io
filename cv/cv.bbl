@@ -1,0 +1,528 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ydnt/global//global/global}
+    \entry{Padawer-Blatt2025}{article}{}
+      \name{author}{11}{}{%
+        {{hash=33c38b47e8c32300141a851068ae2ee4}{%
+           family={{Padawer-Blatt}},
+           familyi={P\bibinitperiod},
+           given={Aviv},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fb67eebe478b7906b869604aceb17dc3}{%
+           family={\myname},
+           familyi={\bibinitperiod}}}%
+        {{hash=26e2018fc8aa82082a770bbb5f5f1054}{%
+           family={{Hough}},
+           familyi={H\bibinitperiod},
+           given={Renier\bibnamedelima T.},
+           giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=ce429480fafe03bc493a1d47c908e002}{%
+           family={{Rennehan}},
+           familyi={R\bibinitperiod},
+           given={Douglas},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9328c741547de830b12986f883df05ed}{%
+           family={{Barré}},
+           familyi={B\bibinitperiod},
+           given={Ruxin},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9356f86488fba4b1753a299c50392b86}{%
+           family={{Saeedzadeh}},
+           familyi={S\bibinitperiod},
+           given={Vida},
+           giveni={V\bibinitperiod}}}%
+        {{hash=43937f214b69cf6f0d7b9544ecf3ed6c}{%
+           family={{Babul}},
+           familyi={B\bibinitperiod},
+           given={Arif},
+           giveni={A\bibinitperiod}}}%
+        {{hash=33b54170e576154437896dfd71ed1706}{%
+           family={{Davé}},
+           familyi={D\bibinitperiod},
+           given={Romeel},
+           giveni={R\bibinitperiod}}}%
+        {{hash=507af0c1b3e2199f62dcbed928163173}{%
+           family={{Kobayashi}},
+           familyi={K\bibinitperiod},
+           given={Chiaki},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e0e67f9d5f9f1d688eddf87e848906fb}{%
+           family={{Cui}},
+           familyi={C\bibinitperiod},
+           given={Weiguang},
+           giveni={W\bibinitperiod}}}%
+        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{aba48cfb72d6d3d8db55888ff9bd6e09}
+      \strng{fullhash}{06485ce619bb8db963718f0af33272bf}
+      \strng{bibnamehash}{06485ce619bb8db963718f0af33272bf}
+      \strng{authorbibnamehash}{06485ce619bb8db963718f0af33272bf}
+      \strng{authornamehash}{aba48cfb72d6d3d8db55888ff9bd6e09}
+      \strng{authorfullhash}{06485ce619bb8db963718f0af33272bf}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{47}
+      \field{eprintclass}{astro-ph.GA}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Universe}
+      \field{month}{2}
+      \field{number}{2}
+      \field{title}{{Core to Cosmic Edge: SIMBA-C's New Take on Abundance Profiles in the Intragroup Medium at z = 0}}
+      \field{volume}{11}
+      \field{year}{2025}
+      \true{nocite}
+      \field{pages}{47}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/universe11020047
+      \endverb
+      \verb{eprint}
+      \verb 2502.04657
+      \endverb
+      \keyw{galaxy groups,intragroup medium,chemical abundances,metallicity,chemical enrichment,cosmological hydrodynamical simulations,X-ray observations,Astrophysics - Astrophysics of Galaxies,Astrophysics - Cosmology and Nongalactic Astrophysics}
+    \endentry
+    \entry{Hough2024}{article}{}
+      \name{author}{8}{}{%
+        {{hash=26e2018fc8aa82082a770bbb5f5f1054}{%
+           family={{Hough}},
+           familyi={H\bibinitperiod},
+           given={Renier\bibnamedelima T.},
+           giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=fb67eebe478b7906b869604aceb17dc3}{%
+           family={\myname},
+           familyi={\bibinitperiod}}}%
+        {{hash=e0e67f9d5f9f1d688eddf87e848906fb}{%
+           family={{Cui}},
+           familyi={C\bibinitperiod},
+           given={Weiguang},
+           giveni={W\bibinitperiod}}}%
+        {{hash=191495b06050ceb2991abf1e0fe58e0d}{%
+           family={{Loubser}},
+           familyi={L\bibinitperiod},
+           given={S.\bibnamedelimi Ilani},
+           giveni={S\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=43937f214b69cf6f0d7b9544ecf3ed6c}{%
+           family={{Babul}},
+           familyi={B\bibinitperiod},
+           given={Arif},
+           giveni={A\bibinitperiod}}}%
+        {{hash=33b54170e576154437896dfd71ed1706}{%
+           family={{Davé}},
+           familyi={D\bibinitperiod},
+           given={Romeel},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ce429480fafe03bc493a1d47c908e002}{%
+           family={{Rennehan}},
+           familyi={R\bibinitperiod},
+           given={Douglas},
+           giveni={D\bibinitperiod}}}%
+        {{hash=507af0c1b3e2199f62dcbed928163173}{%
+           family={{Kobayashi}},
+           familyi={K\bibinitperiod},
+           given={Chiaki},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{b3198d32d8d796751fe29861ce11e3d4}
+      \strng{fullhash}{da0c855f1e359490aa5bddedc62f3db7}
+      \strng{bibnamehash}{da0c855f1e359490aa5bddedc62f3db7}
+      \strng{authorbibnamehash}{da0c855f1e359490aa5bddedc62f3db7}
+      \strng{authornamehash}{b3198d32d8d796751fe29861ce11e3d4}
+      \strng{authorfullhash}{da0c855f1e359490aa5bddedc62f3db7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.GA}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{\mnras}
+      \field{month}{7}
+      \field{number}{1}
+      \field{title}{{Simba-C: the evolution of the thermal and chemical properties in the intragroup medium}}
+      \field{volume}{532}
+      \field{year}{2024}
+      \true{nocite}
+      \field{pages}{476\bibrangedash 495}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1093/mnras/stae1435
+      \endverb
+      \verb{eprint}
+      \verb 2406.04761
+      \endverb
+      \keyw{Astrophysics - Astrophysics of Galaxies}
+    \endentry
+    \entry{Shao2023}{article}{}
+      \name{author}{3}{}{%
+        {{hash=fb67eebe478b7906b869604aceb17dc3}{%
+           family={\myname},
+           familyi={\bibinitperiod}}}%
+        {{hash=b450a627cbf33072c605110e0e5f557c}{%
+           family={{Zu}},
+           familyi={Z\bibinitperiod},
+           given={Ying},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9a6ee6979529370afa57e75339b10d1f}{%
+           family={{Shan}},
+           familyi={S\bibinitperiod},
+           given={Huanyuan},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{41a2419814c2f4469d4e9be43582eb36}
+      \strng{fullhash}{41a2419814c2f4469d4e9be43582eb36}
+      \strng{bibnamehash}{41a2419814c2f4469d4e9be43582eb36}
+      \strng{authorbibnamehash}{41a2419814c2f4469d4e9be43582eb36}
+      \strng{authornamehash}{41a2419814c2f4469d4e9be43582eb36}
+      \strng{authorfullhash}{41a2419814c2f4469d4e9be43582eb36}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{L15}
+      \field{eprintclass}{astro-ph.CO}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{\apjl}
+      \field{month}{6}
+      \field{number}{2}
+      \field{title}{{Is the Large-scale Structure Traced by the BOSS LOWZ Galaxies Consistent with Planck?}}
+      \field{volume}{950}
+      \field{year}{2023}
+      \true{nocite}
+      \field{pages}{L15}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3847/2041-8213/acd9cc
+      \endverb
+      \verb{eprint}
+      \verb 2302.08515
+      \endverb
+      \keyw{Cosmological parameters from large-scale structure,Sigma8,Observational cosmology,Large-scale structure of the universe,Weak gravitational lensing,Dark matter,Cosmology,340,1455,1146,902,1797,353,343,Astrophysics - Cosmology and Nongalactic Astrophysics,mefirst}
+    \endentry
+    \entry{Saeedzadeh2023}{article}{}
+      \name{author}{11}{}{%
+        {{hash=9356f86488fba4b1753a299c50392b86}{%
+           family={{Saeedzadeh}},
+           familyi={S\bibinitperiod},
+           given={Vida},
+           giveni={V\bibinitperiod}}}%
+        {{hash=0574f28e17ced3a79da0c854e665400e}{%
+           family={{Jung}},
+           familyi={J\bibinitperiod},
+           given={S.\bibnamedelimi Lyla},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=ce429480fafe03bc493a1d47c908e002}{%
+           family={{Rennehan}},
+           familyi={R\bibinitperiod},
+           given={Douglas},
+           giveni={D\bibinitperiod}}}%
+        {{hash=43937f214b69cf6f0d7b9544ecf3ed6c}{%
+           family={{Babul}},
+           familyi={B\bibinitperiod},
+           given={Arif},
+           giveni={A\bibinitperiod}}}%
+        {{hash=07883e11bb365123859d0485701b03cb}{%
+           family={{Tremmel}},
+           familyi={T\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=140fe921cd0382c91be14799a19a537f}{%
+           family={{Quinn}},
+           familyi={Q\bibinitperiod},
+           given={Thomas\bibnamedelima R.},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=fb67eebe478b7906b869604aceb17dc3}{%
+           family={\myname},
+           familyi={\bibinitperiod}}}%
+        {{hash=b63b228a3253a4cfd66919448a7dd374}{%
+           family={{Sharma}},
+           familyi={S\bibinitperiod},
+           given={Prateek},
+           giveni={P\bibinitperiod}}}%
+        {{hash=b990ced8cc16a03b6ae92a62a126d532}{%
+           family={{Mayer}},
+           familyi={M\bibinitperiod},
+           given={Lucio},
+           giveni={L\bibinitperiod}}}%
+        {{hash=48f5c94da66ea98f48d4993561efe968}{%
+           family={{O'Sullivan}},
+           familyi={O\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=191495b06050ceb2991abf1e0fe58e0d}{%
+           family={{Loubser}},
+           familyi={L\bibinitperiod},
+           given={S.\bibnamedelimi Ilani},
+           giveni={S\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{e2959806d29a879db6bfcfd599498e44}
+      \strng{fullhash}{a295c52c7c699539a8712d5deae086d5}
+      \strng{bibnamehash}{a295c52c7c699539a8712d5deae086d5}
+      \strng{authorbibnamehash}{a295c52c7c699539a8712d5deae086d5}
+      \strng{authornamehash}{e2959806d29a879db6bfcfd599498e44}
+      \strng{authorfullhash}{a295c52c7c699539a8712d5deae086d5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.GA}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{\mnras}
+      \field{month}{9}
+      \field{title}{{Cool and gusty, with a chance of rain: Dynamics of multiphase CGM around massive galaxies in the ROMULUS simulations}}
+      \field{year}{2023}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.1093/mnras/stad2637
+      \endverb
+      \verb{eprint}
+      \verb 2304.03798
+      \endverb
+      \keyw{instabilities,galaxies: clusters: intracluster medium,galaxies: groups: general,galaxies: haloes,hydrodynamics,methods: numerical,Astrophysics - Astrophysics of Galaxies}
+    \endentry
+    \entry{Chen2022}{article}{}
+      \name{author}{4}{}{%
+        {{hash=fe9a1903cada2c43bac193f3d3af69e4}{%
+           family={{Chen}},
+           familyi={C\bibinitperiod},
+           given={Xiaokai},
+           giveni={X\bibinitperiod}}}%
+        {{hash=b450a627cbf33072c605110e0e5f557c}{%
+           family={{Zu}},
+           familyi={Z\bibinitperiod},
+           given={Ying},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=fb67eebe478b7906b869604aceb17dc3}{%
+           family={\myname},
+           familyi={\bibinitperiod}}}%
+        {{hash=9a6ee6979529370afa57e75339b10d1f}{%
+           family={{Shan}},
+           familyi={S\bibinitperiod},
+           given={Huanyuan},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{79635af31782d3eb7981eea18631ceea}
+      \strng{fullhash}{eb6726d0a1e14c1162ad88749fc13d49}
+      \strng{bibnamehash}{eb6726d0a1e14c1162ad88749fc13d49}
+      \strng{authorbibnamehash}{eb6726d0a1e14c1162ad88749fc13d49}
+      \strng{authornamehash}{79635af31782d3eb7981eea18631ceea}
+      \strng{authorfullhash}{eb6726d0a1e14c1162ad88749fc13d49}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.GA}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{\mnras}
+      \field{month}{8}
+      \field{number}{2}
+      \field{title}{{The sphere of influence of the bright central galaxies in the diffuse light of SDSS clusters}}
+      \field{volume}{514}
+      \field{year}{2022}
+      \true{nocite}
+      \field{pages}{2692\bibrangedash 2706}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1093/mnras/stac1456
+      \endverb
+      \verb{eprint}
+      \verb 2112.03934
+      \endverb
+      \keyw{galaxies: abundances,galaxies: evolution,galaxies: formation,galaxies: statistics,large-scale structure of Universe,Astrophysics - Astrophysics of Galaxies,Astrophysics - Cosmology and Nongalactic Astrophysics}
+    \endentry
+    \entry{Zu2022}{article}{}
+      \name{author}{9}{}{%
+        {{hash=b450a627cbf33072c605110e0e5f557c}{%
+           family={{Zu}},
+           familyi={Z\bibinitperiod},
+           given={Ying},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b352dc1f9ebbff58db4bf009c5bf5462}{%
+           family={{Song}},
+           familyi={S\bibinitperiod},
+           given={Yunjia},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=fb67eebe478b7906b869604aceb17dc3}{%
+           family={\myname},
+           familyi={\bibinitperiod}}}%
+        {{hash=fe9a1903cada2c43bac193f3d3af69e4}{%
+           family={{Chen}},
+           familyi={C\bibinitperiod},
+           given={Xiaokai},
+           giveni={X\bibinitperiod}}}%
+        {{hash=027b2499293234c363cfdbc4f9303635}{%
+           family={{Zheng}},
+           familyi={Z\bibinitperiod},
+           given={Yun},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=70351eb9d3db6f9cb45313fe666d37e7}{%
+           family={{Gao}},
+           familyi={G\bibinitperiod},
+           given={Hongyu},
+           giveni={H\bibinitperiod}}}%
+        {{hash=11fc0bc808d13e04b24e464c22683290}{%
+           family={{Yu}},
+           familyi={Y\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9a6ee6979529370afa57e75339b10d1f}{%
+           family={{Shan}},
+           familyi={S\bibinitperiod},
+           given={Huanyuan},
+           giveni={H\bibinitperiod}}}%
+        {{hash=d32fbc90ce8f3eaeffc06c68ddaca46a}{%
+           family={{Jing}},
+           familyi={J\bibinitperiod},
+           given={Yipeng},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{fa84dfc52a49a4c053925f7b83167d03}
+      \strng{fullhash}{54f11c405131d73e5c0b7527862d9ef6}
+      \strng{bibnamehash}{54f11c405131d73e5c0b7527862d9ef6}
+      \strng{authorbibnamehash}{54f11c405131d73e5c0b7527862d9ef6}
+      \strng{authornamehash}{fa84dfc52a49a4c053925f7b83167d03}
+      \strng{authorfullhash}{54f11c405131d73e5c0b7527862d9ef6}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.CO}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{\mnras}
+      \field{month}{4}
+      \field{number}{2}
+      \field{title}{{Strong conformity and assembly bias: towards a physical understanding of the galaxy-halo connection in SDSS clusters}}
+      \field{volume}{511}
+      \field{year}{2022}
+      \true{nocite}
+      \field{pages}{1789\bibrangedash 1807}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1093/mnras/stac125
+      \endverb
+      \verb{eprint}
+      \verb 2108.06790
+      \endverb
+      \keyw{galaxies: clusters: general,galaxies: evolution,galaxies: formation,galaxies: statistics,cosmology: large-scale structure of Universe,Astrophysics - Cosmology and Nongalactic Astrophysics,Astrophysics - Astrophysics of Galaxies}
+    \endentry
+    \entry{Zu2021}{article}{}
+      \name{author}{13}{}{%
+        {{hash=b450a627cbf33072c605110e0e5f557c}{%
+           family={{Zu}},
+           familyi={Z\bibinitperiod},
+           given={Ying},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9a6ee6979529370afa57e75339b10d1f}{%
+           family={{Shan}},
+           familyi={S\bibinitperiod},
+           given={Huanyuan},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c085572f860d99d03a37c331ee13ff68}{%
+           family={{Zhang}},
+           familyi={Z\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f233644469afa8acb51ab75b9ceab783}{%
+           family={{Singh}},
+           familyi={S\bibinitperiod},
+           given={Sukhdeep},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fb67eebe478b7906b869604aceb17dc3}{%
+           family={\myname},
+           familyi={\bibinitperiod}}}%
+        {{hash=fe9a1903cada2c43bac193f3d3af69e4}{%
+           family={{Chen}},
+           familyi={C\bibinitperiod},
+           given={Xiaokai},
+           giveni={X\bibinitperiod}}}%
+        {{hash=0c9edaac3441f9482cdb4810b645feff}{%
+           family={{Yao}},
+           familyi={Y\bibinitperiod},
+           given={Ji},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ee9dff52d8fc265a5f1a47270736ea23}{%
+           family={{Golden-Marx}},
+           familyi={G\bibinitperiod},
+           given={Jesse\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=e0e67f9d5f9f1d688eddf87e848906fb}{%
+           family={{Cui}},
+           familyi={C\bibinitperiod},
+           given={Weiguang},
+           giveni={W\bibinitperiod}}}%
+        {{hash=b76cc5a11dfd3d102824824378a326ab}{%
+           family={{Jullo}},
+           familyi={J\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=5b701fbe7a0c2f3ceabbbda21c5a636b}{%
+           family={{Kneib}},
+           familyi={K\bibinitperiod},
+           given={Jean-Paul},
+           giveni={J\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=6b2cc35e6c0a248c87acbb4214e9f42b}{%
+           family={{Zhang}},
+           familyi={Z\bibinitperiod},
+           given={Pengjie},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9afecece70dfb45a68489f0f6152cfa6}{%
+           family={{Yang}},
+           familyi={Y\bibinitperiod},
+           given={Xiaohu},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{a7a0bec5e107c7950e1f8df8fa859b46}
+      \strng{fullhash}{9f10aaf91ac765e266578ee6799e9d85}
+      \strng{bibnamehash}{9f10aaf91ac765e266578ee6799e9d85}
+      \strng{authorbibnamehash}{9f10aaf91ac765e266578ee6799e9d85}
+      \strng{authornamehash}{a7a0bec5e107c7950e1f8df8fa859b46}
+      \strng{authorfullhash}{9f10aaf91ac765e266578ee6799e9d85}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.CO}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{\mnras}
+      \field{month}{8}
+      \field{number}{4}
+      \field{title}{{Does concentration drive the scatter in the stellar-to-halo mass relation of galaxy clusters?}}
+      \field{volume}{505}
+      \field{year}{2021}
+      \true{nocite}
+      \field{pages}{5117\bibrangedash 5128}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1093/mnras/stab1712
+      \endverb
+      \verb{eprint}
+      \verb 2012.08629
+      \endverb
+      \keyw{gravitational lensing: weak,galaxies: formation,large-scale structure of Universe,Astrophysics - Cosmology and Nongalactic Astrophysics,Astrophysics - Astrophysics of Galaxies}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

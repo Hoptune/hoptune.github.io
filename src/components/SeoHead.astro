@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+}
+
+const { title, description, canonicalPath = "/" } = Astro.props;
+const pageTitle = `${title} | ${import.meta.env.SITE ? new URL(import.meta.env.SITE).hostname : "Academic Website"}`;
+const canonicalUrl = import.meta.env.SITE
+  ? new URL(canonicalPath, import.meta.env.SITE).toString()
+  : canonicalPath;
+---
+
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<link rel="canonical" href={canonicalUrl} />

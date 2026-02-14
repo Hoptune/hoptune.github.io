@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
+import { profile } from "../data/profile";
+
+const entry = await getEntry("pages", "contact");
+if (!entry) {
+  throw new Error("Missing contact content entry.");
+}
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description} canonicalPath="/contact">
+  <section>
+    <h1>Contact</h1>
+    <p>
+      Email: <a href={`mailto:${profile.email}`}>{profile.email}</a>
+    </p>
+    <p>{profile.location}</p>
+  </section>
+
+  <article class="prose">
+    <Content />
+  </article>
+
+  <section>
+    <h2>Profiles</h2>
+    <ul>
+      {profile.socials.website && <li><a href={profile.socials.website}>Website</a></li>}
+      {profile.socials.googleScholar && <li><a href={profile.socials.googleScholar}>Google Scholar</a></li>}
+      {profile.socials.orcid && <li><a href={profile.socials.orcid}>ORCID</a></li>}
+      {profile.socials.github && <li><a href={profile.socials.github}>GitHub</a></li>}
+      {profile.socials.linkedin && <li><a href={profile.socials.linkedin}>LinkedIn</a></li>}
+    </ul>
+  </section>
+</BaseLayout>

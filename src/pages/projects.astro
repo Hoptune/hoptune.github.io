@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects")).sort((a, b) =>
+  b.data.startDate.localeCompare(a.data.startDate)
+);
+const projectsWithContent = await Promise.all(
+  projects.map(async (project) => {
+    const { Content } = await project.render();
+    return { project, Content };
+  })
+);
+---
+
+<BaseLayout title="Projects" description="Current and completed research projects." canonicalPath="/projects">
+  <section>
+    <h1>Projects</h1>
+    <p>Selected research projects and collaborations.</p>
+  </section>
+
+  <ul class="project-list">
+    {
+      projectsWithContent.map(({ project, Content }) => {
+        return (
+          <li>
+            <article>
+              <h2>{project.data.title}</h2>
+              <p>{project.data.summary}</p>
+              <p class="project-meta">
+                <span>{project.data.status}</span>
+                <span> · </span>
+                <span>
+                  {project.data.startDate}
+                  {project.data.endDate ? ` to ${project.data.endDate}` : " to Present"}
+                </span>
+              </p>
+              <div class="prose"><Content /></div>
+              <p class="project-links">
+                {project.data.links?.website && <a href={project.data.links.website}>Website</a>}
+                {project.data.links?.paper && <a href={project.data.links.paper}>Paper</a>}
+                {project.data.links?.code && <a href={project.data.links.code}>Code</a>}
+              </p>
+            </article>
+          </li>
+        );
+      })
+    }
+  </ul>
+</BaseLayout>
