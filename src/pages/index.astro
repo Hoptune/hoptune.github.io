@@ -1,24 +1,55 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { profile } from "../data/profile";
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("home", "bio");
+if (!entry) {
+  throw new Error("Missing bio content entry.");
+}
+const { Content } = await entry.render();
+const interests = await getEntry("home", "research-interests");
+if (!interests) {
+  throw new Error("Missing research interests entry.");
+}
 ---
 
-<BaseLayout title="Home" description="Academic profile and current research overview." canonicalPath="/">
-  <section class="hero">
-    <p class="eyebrow">{profile.institution}</p>
-    <h1>{profile.fullName}</h1>
-    <p class="lead">{profile.title}</p>
-    <p>{profile.bio}</p>
-    <p class="cta-row">
-      <a class="button" href="/publications">View Publications</a>
-      <a class="button button-secondary" href="/cv">View CV</a>
-    </p>
+<BaseLayout title={entry.data.title} description={entry.data.description ?? ""} canonicalPath="/">
+  <section class="hero hero-grid">
+    <div>
+      <h1>{profile.fullName}</h1>
+      <p class="lead">{profile.title}</p>
+      <p class="eyebrow">{profile.institution}</p>
+      <article class="prose">
+        <Content />
+      </article>
+      <p>
+        <a href={profile.socials.googleScholar || "https://scholar.google.com/"}>Google Scholar</a>
+        {" · "}
+        <a href={profile.socials.github}>GitHub</a>
+      </p>
+      <p class="cta-row">
+        <a class="button" href="/publications">View Publications</a>
+        <a class="button button-secondary" href={profile.cvPdfPath}>Download CV (PDF)</a>
+      </p>
+    </div>
+    <figure class="profile-photo-wrap">
+      <img class="profile-photo" src={profile.photoPath} alt={`Portrait of ${profile.fullName}`} loading="eager" />
+    </figure>
   </section>
 
   <section>
-    <h2>Research Interests</h2>
+    <h2>{interests.data.title}</h2>
     <ul>
-      {profile.researchInterests.map((area) => <li>{area}</li>)}
+      {(interests.data.items ?? []).map((area) => <li>{area}</li>)}
     </ul>
   </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>
+      Email: <a href={`mailto:${profile.email}`}>{profile.email}</a>
+    </p>
+  </section>
+
 </BaseLayout>

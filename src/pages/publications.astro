@@ -2,9 +2,22 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PublicationList from "../components/PublicationList.astro";
 import { parseBibTeX } from "../lib/bibtex";
-import bibRaw from "../data/publications.bib?raw";
+import bibRaw from "../../cv/sections/papers.bib?raw";
+import { profile } from "../data/profile";
 
 const publications = parseBibTeX(bibRaw);
+const surname = profile.fullName.trim().split(/\s+/).slice(-1)[0]?.toLowerCase() ?? "";
+const isFirstAuthor = (firstAuthor: string | undefined): boolean => {
+  if (!firstAuthor || !surname) return false;
+  return firstAuthor.toLowerCase().includes(surname);
+};
+
+const firstAuthorPapers = publications.filter(
+  (pub) => pub.tags.some((tag) => tag.toLowerCase() === "mefirst") || isFirstAuthor(pub.authors[0])
+);
+const otherPapers = publications.filter(
+  (pub) => !pub.tags.some((tag) => tag.toLowerCase() === "mefirst") && !isFirstAuthor(pub.authors[0])
+);
 ---
 
 <BaseLayout
@@ -14,8 +27,25 @@ const publications = parseBibTeX(bibRaw);
 >
   <section>
     <h1>Publications</h1>
-    <p>Publications are maintained from a BibTeX source file for consistent updates.</p>
+    <p>
+      Google Scholar:{" "}
+      <a href={profile.socials.googleScholar || "https://scholar.google.com/citations?user=rYjyXBQAAAAJ"}>
+        {profile.socials.googleScholar || "https://scholar.google.com/citations?user=rYjyXBQAAAAJ"}
+      </a>
+    </p>
   </section>
 
-  <PublicationList items={publications} />
+  <section>
+    <h2>First-Author</h2>
+    {firstAuthorPapers.length > 0 ? (
+      <PublicationList items={firstAuthorPapers} />
+    ) : (
+      <p>No first-author papers listed yet.</p>
+    )}
+  </section>
+
+  <section>
+    <h2>Others</h2>
+    {otherPapers.length > 0 ? <PublicationList items={otherPapers} /> : <p>No additional papers listed.</p>}
+  </section>
 </BaseLayout>

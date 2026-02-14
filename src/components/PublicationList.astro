@@ -1,11 +1,23 @@
 ---
 import type { Publication } from "../lib/bibtex";
+import { profile } from "../data/profile";
 
 interface Props {
   items: Publication[];
 }
 
 const { items } = Astro.props;
+const ownNameNormalized = profile.fullName.toLowerCase().replace(/[^a-z]/g, "");
+
+function isOwnName(name: string): boolean {
+  const normalized = name.toLowerCase().replace(/[^a-z]/g, "");
+  return normalized === ownNameNormalized || (normalized.includes("shao") && (normalized.includes("zhiwei") || normalized.includes("z")));
+}
+
+function isAdsUrl(url: string | undefined): boolean {
+  if (!url) return false;
+  return url.includes("ui.adsabs.harvard.edu");
+}
 ---
 
 <ul class="pub-list">
@@ -15,14 +27,25 @@ const { items } = Astro.props;
         <article>
           <h3>{pub.title}</h3>
           <p class="pub-meta">
-            <span>{pub.authors.join(", ")}</span>
+            <span>
+              {
+                pub.authors.map((author, index) => (
+                  <>
+                    {index > 0 && ", "}
+                    {isOwnName(author) ? <strong>{author}</strong> : author}
+                  </>
+                ))
+              }
+            </span>
             <span> · </span>
             <span>{pub.venue}</span>
             <span> · </span>
             <span>{pub.year}</span>
           </p>
           <p class="pub-links">
-            {pub.url && <a href={pub.url}>Link</a>}
+            {pub.url && !isAdsUrl(pub.url) && <a href={pub.url}>Link</a>}
+            {(pub.ads || isAdsUrl(pub.url) ? <a href={pub.ads || pub.url}>ADS</a> : null)}
+            {pub.arxiv && <a href={pub.arxiv}>arXiv</a>}
             {pub.doi && <a href={`https://doi.org/${pub.doi}`}>DOI</a>}
             {pub.pdf && <a href={pub.pdf}>PDF</a>}
             {pub.code && <a href={pub.code}>Code</a>}

@@ -115,19 +115,41 @@ main {
 
 .hero .eyebrow {
   color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 0.82rem;
-  margin-bottom: 0.35rem;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1.1rem;
+  margin: 0 0 0.35rem 0;
 }
 
 .hero h1 {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.55rem;
 }
 
 .hero .lead {
   color: var(--muted);
   font-size: 1.1rem;
+  margin: 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.profile-photo-wrap {
+  margin: 0;
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  display: block;
+  object-fit: cover;
 }
 
 section + section {
@@ -213,5 +235,13 @@ section + section {
   .button-secondary {
     margin-left: 0;
     margin-top: 0.5rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo {
+    max-width: 260px;
   }
 }

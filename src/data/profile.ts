@@ -7,8 +7,8 @@ export const profile = {
   location: "Shanghai, China",
   bio: "I am a Ph.D. candidate in astronomy working on coobservational cosmology and galaxy evolution.",
   researchInterests: [
-    "Observational cosmology: large-scale structure, ",
-    "Galaxy evolution: galaxy-halo connection and galaxy quenching"
+    "Observational cosmology",
+    "Galaxy-halo connection"
   ],
   socials: {
     website: "https://zwshao.com",
@@ -17,6 +17,7 @@ export const profile = {
     github: "https://github.com/Hoptune",
     linkedin: ""
   },
+  photoPath: "/profile.jpg",
   cvPdfPath: "../../cv/cv.pdf"
 } as const;
 

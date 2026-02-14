@@ -18,9 +18,9 @@ npm run build
 ## Content Sources
 
 - Profile data: `src/data/profile.ts`
-- Publications: `src/data/publications.bib`
-- Pages: `src/content/pages/*.md`
-- Projects: `src/content/projects/*.md`
+- Publications: `cv/sections/papers.bib`
+- Home content: `src/content/home/*.md`
+- Research: `src/content/research/index.md`
 
 ## Deployment
 
