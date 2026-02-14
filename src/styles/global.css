@@ -97,6 +97,15 @@ main {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-nav .brand img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 
 .site-nav ul {
