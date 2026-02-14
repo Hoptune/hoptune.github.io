@@ -43,3 +43,42 @@ const links = [
     </ul>
   </details>
 </nav>
+
+<script is:inline>
+  (() => {
+    const init = () => {
+      const menus = Array.from(document.querySelectorAll(".mobile-menu"));
+      if (!menus.length) return;
+
+      const closeMenu = (menu) => {
+        menu.removeAttribute("open");
+        const summary = menu.querySelector("summary");
+        if (summary instanceof HTMLElement) summary.blur();
+      };
+
+      menus.forEach((menu) => {
+        menu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => closeMenu(menu));
+        });
+      });
+
+      document.addEventListener("pointerdown", (event) => {
+        menus.forEach((menu) => {
+          if (!menu.contains(event.target)) closeMenu(menu);
+        });
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          menus.forEach((menu) => closeMenu(menu));
+        }
+      });
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+  })();
+</script>
