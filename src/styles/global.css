@@ -266,13 +266,14 @@ main > section + article {
 }
 
 body.home-page {
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 body.home-page .page-shell {
-  height: 100vh;
+  height: auto;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: visible;
   padding: 0;
 }
 
@@ -289,13 +290,14 @@ body.home-page main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow: visible;
 }
 
 body.home-page .home-hero {
-  flex: 0 0 auto;
+  flex: 1 0 auto;
   min-height: 100vh;
+  width: 100%;
 }
 
 .hero-template-content {
@@ -333,6 +335,8 @@ body.home-page .home-hero {
 
 .hero-intro {
   max-width: 680px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .hero-intro h1 {
@@ -556,6 +560,39 @@ body.home-page .home-hero {
 }
 
 @media (max-width: 860px) {
+  body.home-page .site-nav {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: auto;
+  }
+
+  body.home-page {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  body.home-page .page-shell {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  body.home-page main {
+    height: auto;
+    min-height: calc(100vh - 4.5rem);
+    overflow: visible;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.home-page .home-hero {
+    min-height: calc(100vh - 4.5rem);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   .site-nav .desktop-links {
     display: none;
   }
@@ -567,6 +604,16 @@ body.home-page .home-hero {
   .button-secondary {
     margin-left: 0;
     margin-top: 0.45rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-intro h1 {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+  }
+
+  .hero-title {
+    font-size: 1.08rem;
   }
 }
 
