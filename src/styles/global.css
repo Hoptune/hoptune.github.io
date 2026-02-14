@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #f3f6fb;
+  --bg: #d8d1c6;
   --text: #1f2937;
   --muted: #5b6778;
   --primary: #4f7cff;
@@ -323,7 +323,8 @@ body.home-page .home-hero {
   mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  filter: drop-shadow(0 0 0 #d7deea);
+  filter: drop-shadow(0 0 8px var(--bg));
+  box-shadow: 0 0 0 1px rgba(216, 209, 198, 0.35);
 }
 
 .hero-avatar {
