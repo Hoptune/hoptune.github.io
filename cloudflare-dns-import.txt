@@ -1,0 +1,20 @@
+$ORIGIN zwshao.com.
+$TTL 3600
+
+@                       IN A      185.199.108.153
+@                       IN A      185.199.109.153
+@                       IN A      185.199.110.153
+@                       IN A      185.199.111.153
+
+www                     IN CNAME  hoptune.github.io.
+
+mail                    IN CNAME  privateemail.com.
+autoconfig              IN CNAME  privateemail.com.
+autodiscover            IN CNAME  privateemail.com.
+
+@                       IN MX     10 mx1.privateemail.com.
+@                       IN MX     10 mx2.privateemail.com.
+
+_autodiscover._tcp      IN SRV    0 0 443 privateemail.com.
+
+@                       IN TXT    "v=spf1 include:spf.privateemail.com ~all"

@@ -2,7 +2,6 @@
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import SeoHead from "../components/SeoHead.astro";
-import Analytics from "../components/Analytics.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -22,7 +21,6 @@ const isHomePage = Astro.url.pathname === "/";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/logo.png" type="image/png" />
     <SeoHead title={title} description={description} canonicalPath={canonicalPath} />
-    <Analytics />
   </head>
   <body class={isHomePage ? "home-page" : undefined}>
     <div class="page-shell">
@@ -30,7 +28,7 @@ const isHomePage = Astro.url.pathname === "/";
       <main>
         <slot />
       </main>
-      <Footer />
+      {!isHomePage && <Footer />}
     </div>
   </body>
 </html>

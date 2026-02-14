@@ -17,7 +17,7 @@ export const profile = {
     github: "https://github.com/Hoptune",
     linkedin: ""
   },
-  photoPath: "/profile.jpg",
+  photoPath: "/profile.webp",
   cvPdfPath: "../../cv/cv.pdf"
 } as const;
 
