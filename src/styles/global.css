@@ -258,7 +258,7 @@ main > section + article {
 }
 
 .home-hero {
-  min-height: calc(100vh - 4.5rem);
+  min-height: 100vh;
   justify-content: center;
   padding-top: 0;
   padding-bottom: 0;
@@ -273,18 +273,29 @@ body.home-page .page-shell {
   height: 100vh;
   min-height: 100vh;
   overflow: hidden;
-  padding-bottom: 0;
+  padding: 0;
+}
+
+body.home-page .site-nav {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(calc(100% - 2rem), var(--max));
+  z-index: 40;
 }
 
 body.home-page main {
   display: flex;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
   overflow: hidden;
 }
 
 body.home-page .home-hero {
-  flex: 1;
-  min-height: 0;
+  flex: 0 0 auto;
+  min-height: 100vh;
 }
 
 .hero-template-content {
