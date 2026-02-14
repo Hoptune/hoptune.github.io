@@ -8,48 +8,39 @@ if (!entry) {
   throw new Error("Missing bio content entry.");
 }
 const { Content } = await entry.render();
-const interests = await getEntry("home", "research-interests");
-if (!interests) {
-  throw new Error("Missing research interests entry.");
-}
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description ?? ""} canonicalPath="/">
-  <section class="hero hero-grid">
-    <div>
-      <h1>{profile.fullName}</h1>
-      <p class="lead">{profile.title}</p>
-      <p class="eyebrow">{profile.institution}</p>
-      <article class="prose">
-        <Content />
-      </article>
-      <p>
-        <a href={profile.socials.googleScholar || "https://scholar.google.com/"}>Google Scholar</a>
-        {" · "}
-        <a href={profile.socials.github}>GitHub</a>
-      </p>
-      <p class="cta-row">
-        <a class="button" href="/publications">View Publications</a>
-        <a class="button button-secondary" href={profile.cvPdfPath}>Download CV (PDF)</a>
-      </p>
+  <section class="hero-template">
+    <div class="hero-template-content">
+      <figure class="hero-avatar-wrap">
+        <img class="hero-avatar" src={profile.photoPath} alt={`Portrait of ${profile.fullName}`} loading="eager" />
+      </figure>
+      <div class="hero-intro">
+        <h1>Hi, I'm {profile.fullName}</h1>
+        <p class="hero-title">{profile.title}</p>
+        <p class="hero-location">{profile.institution}</p>
+        <article class="prose">
+          <Content />
+        </article>
+        <div class="hero-actions">
+          <div class="hero-socials" aria-label="Social links">
+            <a href={`mailto:${profile.email}`} aria-label="Email">
+              <img src="/icons/email.svg" alt="" />
+            </a>
+            <a href={profile.socials.googleScholar || "https://scholar.google.com/"} aria-label="Google Scholar">
+              <img src="/icons/google-scholar.svg" alt="" />
+            </a>
+            <a href={profile.socials.github} aria-label="GitHub">
+              <img src="/icons/github.svg" alt="" />
+            </a>
+            <a href={profile.socials.orcid} aria-label="ORCID">
+              <img src="/icons/orcid.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <figure class="profile-photo-wrap">
-      <img class="profile-photo" src={profile.photoPath} alt={`Portrait of ${profile.fullName}`} loading="eager" />
-    </figure>
-  </section>
-
-  <section>
-    <h2>{interests.data.title}</h2>
-    <ul>
-      {(interests.data.items ?? []).map((area) => <li>{area}</li>)}
-    </ul>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p>
-      Email: <a href={`mailto:${profile.email}`}>{profile.email}</a>
-    </p>
   </section>
 
 </BaseLayout>

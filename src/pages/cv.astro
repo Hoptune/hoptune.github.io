@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("home", "cv");
+if (!entry) {
+  throw new Error("Missing CV content entry.");
+}
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description ?? ""} canonicalPath="/cv">
+  <article class="prose cv-content">
+    <Content />
+  </article>
+</BaseLayout>

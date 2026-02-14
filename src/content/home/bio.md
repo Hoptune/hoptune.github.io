@@ -1,6 +1,6 @@
 ---
-title: About me
+title: About Me
 description: Academic profile and current research overview.
 ---
 
-Hi! I'm Zhiwei Shao, a fifth-year Ph.D. Candidate in Astronomy at Shanghai Jiao Tong University. My research focuses on cosmology and galaxy evolution, combining numerical simulations with observational constraints.
+I'm a fifth-year PhD Candidate in Astronomy at Shanghai Jiao Tong University. During my PhD, I leverage the [Dark Energy Spectroscopic Instrument (DESI)](https://www.desi.lbl.gov/) to study galaxy–halo connection and cosmology, using multiple probes from dwarf galaxies to massive clusters.

@@ -6,7 +6,8 @@ interface Props {
 }
 
 const { title, description, canonicalPath = "/" } = Astro.props;
-const pageTitle = `${title} | ${import.meta.env.SITE ? new URL(import.meta.env.SITE).hostname : "Academic Website"}`;
+const siteTitle = "Zhiwei's Personal Website";
+const pageTitle = `${title} | ${siteTitle}`;
 const canonicalUrl = import.meta.env.SITE
   ? new URL(canonicalPath, import.meta.env.SITE).toString()
   : canonicalPath;
