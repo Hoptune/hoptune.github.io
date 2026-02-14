@@ -9,6 +9,6 @@ description: Current research directions and selected work.
 
 <br />
 
-## Galaxy—halo connection
+## Galaxy–halo connection
 
 ### [Direct Measurement of Galaxy Assembly Bias using DESI DR1 Data](https://ui.adsabs.harvard.edu/abs/2025arXiv251020896S/abstract)
