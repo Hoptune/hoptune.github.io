@@ -445,14 +445,19 @@ body.home-page .home-hero {
 
 @media (max-width: 980px) {
   .research-card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(16.5rem, 1fr));
   }
 }
 
 @media (max-width: 640px) {
   .research-card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.6rem;
+  }
+
+  .research-card {
+    width: min(100%, 30rem);
+    margin-inline: auto;
   }
 }
 
