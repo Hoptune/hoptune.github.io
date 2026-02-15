@@ -122,6 +122,11 @@ const categories = await Promise.all(
       const roots = Array.from(document.querySelectorAll("[data-research-tabs]"));
       if (!roots.length) return;
 
+      const hasMathMarkers = (value) => {
+        if (!value) return false;
+        return /(^|[^\\])\$|\\\(|\\\[/.test(value);
+      };
+
       const ensureMathJax = (nodes) => {
         if (!nodes.length) return;
 
@@ -302,7 +307,35 @@ const categories = await Promise.all(
       });
 
       const summaryNodes = Array.from(document.querySelectorAll(".research-card-summary"));
-      ensureMathJax(summaryNodes);
+      const mathSummaryNodes = summaryNodes.filter((node) => {
+        if (!(node instanceof HTMLElement)) return false;
+        return hasMathMarkers(node.textContent || node.innerHTML);
+      });
+
+      if (mathSummaryNodes.length > 0) {
+        let didTypeset = false;
+        const typesetSummaries = () => {
+          if (didTypeset) return;
+          didTypeset = true;
+          ensureMathJax(mathSummaryNodes);
+        };
+
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              if (entries.some((entry) => entry.isIntersecting)) {
+                observer.disconnect();
+                typesetSummaries();
+              }
+            },
+            { rootMargin: "220px 0px" }
+          );
+
+          roots.forEach((root) => observer.observe(root));
+        } else {
+          setTimeout(typesetSummaries, 600);
+        }
+      }
     };
 
     init();

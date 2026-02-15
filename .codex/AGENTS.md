@@ -8,7 +8,7 @@ Use this checklist whenever you manually update the website.
 
 When the user says "deploy the website", interpret it as running the full deploy workflow:
 
-- Run the full local deploy build process (`npm run build`, including `prebuild` steps)
+- Run the full local deploy build process (`npm run build`)
 - Always sync the latest LaTeX-generated CV to the website download file:
   `cp cv/cv.pdf public/cv.pdf`
 - Commit all intended website changes
@@ -36,7 +36,7 @@ Then confirm `src/data/profile.ts` points to:
 
 - `photoPath: "/profile.webp"`
 
-### 1.2) Research figure preprocessing check (required for every deploy)
+### 1.2) Research figure file check (required for every deploy)
 
 Research project figures are declared in:
 
@@ -48,21 +48,13 @@ Figure files live in:
 
 Rules:
 
-- Keep original files as `*.orig.<ext>` backups (for example: `gab_nsat.orig.png`)
-- Do not delete or overwrite `*.orig.*` files manually
-- Processed deploy image keeps the original filename (for example: `gab_nsat.png`)
+- Use the original figure files directly (no background-conversion preprocessing)
 - Always use absolute website path in frontmatter, e.g. `figure: "/images/research/gab_nsat.png"`
-
-Preprocess command:
-
-```bash
-npm run preprocess:figures
-```
+- Keep `public/images/research/` free of obsolete converted duplicates
 
 Deploy/build requirement:
 
-- `npm run build` must be used for deploy; it runs preprocessing automatically via `prebuild`
-- Do not bypass `prebuild` during deployment
+- `npm run build` must be used for deploy
 
 ### 1.3) Research markdown consistency check (required)
 

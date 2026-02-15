@@ -5,8 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "npm run preprocess:figures",
-    "preprocess:figures": "node scripts/preprocess-research-figures.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check"
