@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #d8d1c6;
+  --bg: #ffffff;
   --text: #1f2937;
   --muted: #5b6778;
   --primary: #4f7cff;
@@ -226,7 +226,7 @@ main {
   padding: 0.2rem 0;
   border: 0;
   border-radius: 0;
-  background: #e6dfd4;
+  background: var(--bg);
 }
 
 .mobile-menu li + li {
@@ -382,7 +382,7 @@ body.home-page .home-hero {
   color: inherit;
   border: 2px solid #111111;
   border-radius: 10px;
-  background: #e6dfd4;
+  background: var(--bg);
   overflow: hidden;
   text-decoration: none;
   transition: background-color 140ms ease, border-color 140ms ease;
@@ -391,7 +391,7 @@ body.home-page .home-hero {
 .research-card:hover,
 .research-card:focus-visible {
   border-color: #111111;
-  background: #e6dfd4;
+  background: var(--bg);
   text-decoration: none;
 }
 
