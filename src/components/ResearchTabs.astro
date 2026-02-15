@@ -181,7 +181,19 @@ const categories = await Promise.all(
         };
 
         measurePanelHeight();
-        window.addEventListener("resize", measurePanelHeight);
+        let lastViewportWidth = window.innerWidth;
+        let resizeFrame = null;
+        const handleResize = () => {
+          const nextWidth = window.innerWidth;
+          if (nextWidth === lastViewportWidth) return;
+          lastViewportWidth = nextWidth;
+          if (resizeFrame !== null) cancelAnimationFrame(resizeFrame);
+          resizeFrame = requestAnimationFrame(() => {
+            measurePanelHeight();
+            resizeFrame = null;
+          });
+        };
+        window.addEventListener("resize", handleResize);
         root.querySelectorAll("img").forEach((img) => {
           img.addEventListener("load", measurePanelHeight, { once: true });
         });
