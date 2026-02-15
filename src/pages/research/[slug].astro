@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("researchProjects");
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.summary ?? "Research project details."}
+  canonicalPath={`/research/${entry.slug}/`}
+>
+  <section class="research-detail">
+    <p class="research-detail-back">
+      <a href={`/?researchTab=${entry.data.category}#research`}><u>Back to Research</u></a>
+    </p>
+    <h1>{entry.data.title}</h1>
+    {entry.data.figure && (
+      <>
+        <figure
+          class="research-detail-figure"
+          style={entry.data.figureMaxWidth ? `--research-detail-figure-max-width: ${entry.data.figureMaxWidth};` : undefined}
+        >
+          <img src={entry.data.figure} alt={entry.data.figureAlt || `${entry.data.title} figure`} loading="lazy" />
+        </figure>
+        {entry.data.figureCaption && <p class="research-detail-caption" set:html={entry.data.figureCaption}></p>}
+      </>
+    )}
+    <article class="prose">
+      <Content />
+    </article>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const captions = Array.from(document.querySelectorAll(".research-detail-caption"));
+      if (!captions.length) return;
+
+      const renderMath = () => {
+        const mj = window.MathJax;
+        if (!mj || typeof mj.typesetPromise !== "function") return;
+        mj.typesetPromise(captions).catch(() => {});
+      };
+
+      if (!window.MathJax) {
+        window.MathJax = {
+          tex: {
+            inlineMath: [
+              ["$", "$"],
+              ["\\(", "\\)"]
+            ],
+            displayMath: [
+              ["$$", "$$"],
+              ["\\[", "\\]"]
+            ]
+          }
+        };
+      }
+
+      if (window.MathJax && typeof window.MathJax.typesetPromise === "function") {
+        renderMath();
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+      script.async = true;
+      script.onload = renderMath;
+      document.head.appendChild(script);
+    })();
+  </script>
+</BaseLayout>

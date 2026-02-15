@@ -1,17 +1,40 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PublicationList from "../components/PublicationList.astro";
+import ResearchTabs from "../components/ResearchTabs.astro";
 import { profile } from "../data/profile";
+import { parseBibTeX } from "../lib/bibtex";
 import { getEntry } from "astro:content";
+import bibRaw from "../../cv/sections/papers.bib?raw";
 
-const entry = await getEntry("home", "bio");
-if (!entry) {
+const bioEntry = await getEntry("home", "bio");
+if (!bioEntry) {
   throw new Error("Missing bio content entry.");
 }
-const { Content } = await entry.render();
+const cvEntry = await getEntry("home", "cv");
+if (!cvEntry) {
+  throw new Error("Missing CV content entry.");
+}
+
+const { Content: BioContent } = await bioEntry.render();
+const { Content: CvContent } = await cvEntry.render();
+
+const publications = parseBibTeX(bibRaw);
+const surname = profile.fullName.trim().split(/\s+/).slice(-1)[0]?.toLowerCase() ?? "";
+const isFirstAuthor = (firstAuthor: string | undefined): boolean => {
+  if (!firstAuthor || !surname) return false;
+  return firstAuthor.toLowerCase().includes(surname);
+};
+
+const firstAuthorPapers = publications.filter(
+  (pub) => pub.tags.some((tag) => tag.toLowerCase() === "mefirst") || isFirstAuthor(pub.authors[0])
+);
+const scholarUrl = profile.socials.googleScholar || "https://scholar.google.com/citations?user=rYjyXBQAAAAJ";
+const adsUrl = "https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-4585-3985&sort=date+desc";
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description ?? ""} canonicalPath="/">
-  <section class="hero-template home-hero">
+<BaseLayout title={bioEntry.data.title} description={bioEntry.data.description ?? ""} canonicalPath="/">
+  <section id="about" class="hero-template home-hero">
     <div class="hero-template-content">
       <figure class="hero-avatar-wrap">
         <img class="hero-avatar" src={profile.photoPath} alt={`Portrait of ${profile.fullName}`} loading="eager" />
@@ -21,7 +44,7 @@ const { Content } = await entry.render();
         <p class="hero-title">{profile.title}</p>
         <p class="hero-location">{profile.institution}</p>
         <article class="prose">
-          <Content />
+          <BioContent />
         </article>
         <div class="hero-actions">
           <div class="hero-socials" aria-label="Social links">
@@ -47,4 +70,30 @@ const { Content } = await entry.render();
     </div>
   </section>
 
+  <section id="research" class="home-section">
+    <h2>Research</h2>
+    <ResearchTabs instanceId="home-research" />
+  </section>
+
+  <section id="publications" class="home-section">
+    <h2>Selected Publications</h2>
+    <div class="publications-window">
+      <p>
+        See <a href={scholarUrl}><u>Google Scholar</u></a> or <a href={adsUrl}><u>ADS library</u></a> for a full list.
+      </p>
+
+      {firstAuthorPapers.length > 0 ? (
+        <PublicationList items={firstAuthorPapers} />
+      ) : (
+        <p>No first-author papers listed yet.</p>
+      )}
+    </div>
+  </section>
+
+  <section id="cv" class="home-section">
+    <h2>CV</h2>
+    <article class="prose cv-content">
+      <CvContent />
+    </article>
+  </section>
 </BaseLayout>

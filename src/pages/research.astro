@@ -1,16 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ResearchTabs from "../components/ResearchTabs.astro";
 import { getEntry } from "astro:content";
 
 const entry = await getEntry("research", "index");
 if (!entry) {
   throw new Error("Missing research content entry.");
 }
-const { Content } = await entry.render();
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description ?? ""} canonicalPath="/research">
-  <article class="prose">
-    <Content />
-  </article>
+  <section>
+    <h1>{entry.data.title}</h1>
+    <ResearchTabs instanceId="research-page" />
+  </section>
 </BaseLayout>

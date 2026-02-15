@@ -19,6 +19,90 @@
 
 \refsection{0}
   \datalist[entry]{ydnt/global//global/global}
+    \entry{Shao2025}{article}{}
+      \name{author}{11}{}{%
+        {{hash=fb67eebe478b7906b869604aceb17dc3}{%
+           family={\myname},
+           familyi={\bibinitperiod}}}%
+        {{hash=b450a627cbf33072c605110e0e5f557c}{%
+           family={{Zu}},
+           familyi={Z\bibinitperiod},
+           given={Ying},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=72e66b3267f51dfca766cad7bc864b25}{%
+           family={{Salcedo}},
+           familyi={S\bibinitperiod},
+           given={Andrés\bibnamedelima N.},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=3344bbcf94977a4549edb7feaf02c615}{%
+           family={{Wang}},
+           familyi={W\bibinitperiod},
+           given={Jiaqi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9afecece70dfb45a68489f0f6152cfa6}{%
+           family={{Yang}},
+           familyi={Y\bibinitperiod},
+           given={Xiaohu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=65e286d610af1c6170489dbe9a0cbba1}{%
+           family={{Weinberg}},
+           familyi={W\bibinitperiod},
+           given={David\bibnamedelima H.},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=be5308029e041bdade6415f410de8020}{%
+           family={{Xu}},
+           familyi={X\bibinitperiod},
+           given={Xiaoju},
+           giveni={X\bibinitperiod}}}%
+        {{hash=e5eaf9a68de3ef278caf557d76e9b4e0}{%
+           family={{Zhai}},
+           familyi={Z\bibinitperiod},
+           given={Zhongxu},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=d0cc441398df9e50c835fc72b21d98f0}{%
+           family={{Zhang}},
+           familyi={Z\bibinitperiod},
+           given={Zhuowen},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=4feef1103460c1fbe23560ecae987cb5}{%
+           family={{Aguilar}},
+           familyi={A\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{28d007b6c7da0b7e609f8f0c59df86fd}
+      \strng{fullhash}{225503e66c5df8390e0e349021d73e8f}
+      \strng{bibnamehash}{225503e66c5df8390e0e349021d73e8f}
+      \strng{authorbibnamehash}{225503e66c5df8390e0e349021d73e8f}
+      \strng{authornamehash}{28d007b6c7da0b7e609f8f0c59df86fd}
+      \strng{authorfullhash}{225503e66c5df8390e0e349021d73e8f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{arXiv:2510.20896}
+      \field{eprintclass}{astro-ph.GA}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{arXiv e-prints}
+      \field{month}{10}
+      \field{title}{{Direct Measurement of Galaxy Assembly Bias using DESI DR1 Data}}
+      \field{year}{2025}
+      \true{nocite}
+      \field{pages}{arXiv:2510.20896}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.48550/arXiv.2510.20896
+      \endverb
+      \verb{eprint}
+      \verb 2510.20896
+      \endverb
+      \keyw{Astrophysics of Galaxies,Cosmology and Nongalactic Astrophysics,mefirst}
+    \endentry
     \entry{Padawer-Blatt2025}{article}{}
       \name{author}{11}{}{%
         {{hash=33c38b47e8c32300141a851068ae2ee4}{%

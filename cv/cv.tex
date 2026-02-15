@@ -17,6 +17,12 @@ defernumbers,sortcites,sorting=ydnt,dashed=false]{biblatex}
 \usepackage{simplecv}
 
 \boldname{Surname}{Name}{N.}
+\newcounter{pubtotal}
+\newcounter{pubfirstauthor}
+\AtDataInput{%
+  \stepcounter{pubtotal}%
+  \ifkeyword{mefirst}{\stepcounter{pubfirstauthor}}{}%
+}
 
 \begin{document}
 

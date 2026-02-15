@@ -26,6 +26,34 @@ Then confirm `src/data/profile.ts` points to:
 
 - `photoPath: "/profile.webp"`
 
+### 1.2) Research figure preprocessing check (required for every deploy)
+
+Research project figures are declared in:
+
+- `src/content/researchProjects/*.md` (`figure: "/images/research/..."`)
+
+Figure files live in:
+
+- `public/images/research/`
+
+Rules:
+
+- Keep original files as `*.orig.<ext>` backups (for example: `gab_nsat.orig.png`)
+- Do not delete or overwrite `*.orig.*` files manually
+- Processed deploy image keeps the original filename (for example: `gab_nsat.png`)
+- Always use absolute website path in frontmatter, e.g. `figure: "/images/research/gab_nsat.png"`
+
+Preprocess command:
+
+```bash
+npm run preprocess:figures
+```
+
+Deploy/build requirement:
+
+- `npm run build` must be used for deploy; it runs preprocessing automatically via `prebuild`
+- Do not bypass `prebuild` during deployment
+
 ### 2) Update and compile CV (LaTeX)
 
 CV source:

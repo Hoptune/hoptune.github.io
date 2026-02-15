@@ -2,7 +2,7 @@ PWD /Users/zwshao/Documents/Sites/PersonalWebsite/cv
 INPUT /usr/local/texlive/2022/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/zwshao/Documents/Sites/PersonalWebsite/cv/cv.tex
+INPUT cv.tex
 OUTPUT cv.log
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
@@ -880,11 +880,6 @@ INPUT sections/talks.tex
 INPUT ./sections/talks.tex
 INPUT sections/talks.tex
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
-INPUT ./sections/awards.tex
-INPUT sections/awards.tex
-INPUT ./sections/awards.tex
-INPUT sections/awards.tex
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/vf/adobe/times/ptmrc7t.vf
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
@@ -906,6 +901,10 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
+INPUT ./sections/awards.tex
+INPUT sections/awards.tex
+INPUT ./sections/awards.tex
+INPUT sections/awards.tex
 INPUT ./sections/outreach.tex
 INPUT sections/outreach.tex
 INPUT ./sections/outreach.tex

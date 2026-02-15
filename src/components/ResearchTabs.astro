@@ -1,0 +1,228 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+  label?: string;
+  instanceId?: string;
+}
+
+const { label = "Research categories", instanceId = "research-tabs" } = Astro.props;
+const tabEntries = await getCollection("researchTabs");
+const projectEntries = await getCollection("researchProjects");
+const categories = await Promise.all(
+  [...tabEntries]
+    .sort((a, b) => {
+      const orderA = a.data.order ?? Number.MAX_SAFE_INTEGER;
+      const orderB = b.data.order ?? Number.MAX_SAFE_INTEGER;
+      if (orderA !== orderB) return orderA - orderB;
+      return a.slug.localeCompare(b.slug);
+    })
+    .map(async (entry) => {
+      const { Content } = await entry.render();
+      const hasDescription = (entry.body ?? "").trim().length > 0;
+      const projects = [...projectEntries]
+        .filter((project) => project.data.category === entry.slug)
+        .sort((a, b) => {
+          const orderA = a.data.order ?? Number.MAX_SAFE_INTEGER;
+          const orderB = b.data.order ?? Number.MAX_SAFE_INTEGER;
+          if (orderA !== orderB) return orderA - orderB;
+          return a.data.title.localeCompare(b.data.title);
+        })
+        .map((project) => ({
+          slug: project.slug,
+          title: project.data.title,
+          summary: project.data.summary,
+          figure: project.data.figure,
+          figureAlt: project.data.figureAlt
+        }));
+
+      return {
+        id: entry.slug,
+        label: entry.data.title,
+        Content,
+        hasDescription,
+        projects
+      };
+    })
+);
+---
+
+<div class="research-tabs" data-research-tabs data-ready="false">
+  <div class="research-tab-list" role="tablist" aria-label={label}>
+    {
+      categories.map((category, index) => (
+        <button
+          class="research-tab"
+          type="button"
+          role="tab"
+          data-tab-key={category.id}
+          id={`${instanceId}-tab-${category.id}`}
+          aria-controls={`${instanceId}-panel-${category.id}`}
+          aria-selected={index === 0 ? "true" : "false"}
+          tabindex={index === 0 ? "0" : "-1"}
+        >
+          {category.label}
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="research-tab-panels" data-research-tab-panels>
+    {
+      categories.map((category, index) => {
+        const TabContent = category.Content;
+        return (
+          <section
+            class="research-tab-panel"
+            role="tabpanel"
+            id={`${instanceId}-panel-${category.id}`}
+            aria-labelledby={`${instanceId}-tab-${category.id}`}
+            hidden={index !== 0}
+          >
+            {category.hasDescription && (
+              <article class="prose research-tab-content">
+                <TabContent />
+              </article>
+            )}
+            {category.projects.length > 0 ? (
+              <div class="research-card-grid">
+                {category.projects.map((project) => (
+                  <a class="research-card" href={`/research/${project.slug}/`}>
+                    {project.figure ? (
+                      <img
+                        class="research-card-figure"
+                        src={project.figure}
+                        alt={project.figureAlt || `${project.title} figure`}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="research-card-figure-placeholder" aria-hidden="true">Figure slot</div>
+                    )}
+                    <div class="research-card-body">
+                      <h3>{project.title}</h3>
+                      {project.summary && <p>{project.summary}</p>}
+                      <span class="research-card-cta">Read details</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <p>No projects in this category yet.</p>
+            )}
+          </section>
+        );
+      })
+    }
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    const init = () => {
+      const roots = Array.from(document.querySelectorAll("[data-research-tabs]"));
+      if (!roots.length) return;
+
+      roots.forEach((root) => {
+        if (!(root instanceof HTMLElement) || root.dataset.bound === "true") return;
+        root.dataset.bound = "true";
+
+        const tabs = Array.from(root.querySelectorAll('[role="tab"]'));
+        const panels = Array.from(root.querySelectorAll('[role="tabpanel"]'));
+        const panelContainer = root.querySelector("[data-research-tab-panels]");
+        if (!tabs.length || tabs.length !== panels.length) return;
+
+        const measurePanelHeight = () => {
+          let maxHeight = 0;
+          panels.forEach((panel) => {
+            if (!(panel instanceof HTMLElement)) return;
+
+            const wasHidden = panel.hidden;
+            if (wasHidden) {
+              panel.hidden = false;
+              panel.style.position = "absolute";
+              panel.style.visibility = "hidden";
+              panel.style.pointerEvents = "none";
+              panel.style.left = "0";
+              panel.style.top = "0";
+              if (panelContainer instanceof HTMLElement) {
+                panel.style.width = `${panelContainer.clientWidth}px`;
+              }
+            }
+
+            maxHeight = Math.max(maxHeight, panel.scrollHeight);
+
+            if (wasHidden) {
+              panel.hidden = true;
+              panel.style.position = "";
+              panel.style.visibility = "";
+              panel.style.pointerEvents = "";
+              panel.style.left = "";
+              panel.style.top = "";
+              panel.style.width = "";
+            }
+          });
+
+          if (panelContainer instanceof HTMLElement) {
+            panelContainer.style.minHeight = `${Math.ceil(maxHeight)}px`;
+          }
+        };
+
+        const setActive = (nextIndex, shouldFocus = false) => {
+          tabs.forEach((tab, index) => {
+            const isActive = index === nextIndex;
+            tab.setAttribute("aria-selected", isActive ? "true" : "false");
+            tab.setAttribute("tabindex", isActive ? "0" : "-1");
+            if (isActive && shouldFocus && tab instanceof HTMLElement) tab.focus();
+          });
+
+          panels.forEach((panel, index) => {
+            if (panel instanceof HTMLElement) panel.hidden = index !== nextIndex;
+          });
+        };
+
+        measurePanelHeight();
+        window.addEventListener("resize", measurePanelHeight);
+        root.querySelectorAll("img").forEach((img) => {
+          img.addEventListener("load", measurePanelHeight, { once: true });
+        });
+
+        const requestedTabKey = new URLSearchParams(window.location.search).get("researchTab");
+        if (requestedTabKey) {
+          const requestedIndex = tabs.findIndex((tab) => tab.dataset.tabKey === requestedTabKey);
+          if (requestedIndex >= 0) {
+            setActive(requestedIndex);
+            const url = new URL(window.location.href);
+            url.searchParams.delete("researchTab");
+            history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+          }
+        }
+
+        tabs.forEach((tab, index) => {
+          tab.addEventListener("mouseenter", () => setActive(index));
+          tab.addEventListener("click", () => setActive(index));
+          tab.addEventListener("keydown", (event) => {
+            if (!(event instanceof KeyboardEvent)) return;
+
+            if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+              event.preventDefault();
+              setActive((index + 1) % tabs.length, true);
+            } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+              event.preventDefault();
+              setActive((index - 1 + tabs.length) % tabs.length, true);
+            } else if (event.key === "Home") {
+              event.preventDefault();
+              setActive(0, true);
+            } else if (event.key === "End") {
+              event.preventDefault();
+              setActive(tabs.length - 1, true);
+            }
+          });
+        });
+
+        root.dataset.ready = "true";
+      });
+    };
+
+    init();
+  })();
+</script>

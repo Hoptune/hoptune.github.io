@@ -4,7 +4,9 @@ import { profile } from "../data/profile";
 
 <footer class="site-footer">
   <p>
-    Contact: <a href={`mailto:${profile.email}`}>{profile.email}</a>
+    Contact: <a href={`mailto:${profile.email}`}><u>{profile.email}</u></a>
   </p>
-  <p>&copy; {new Date().getFullYear()} {profile.fullName}. All rights reserved.</p>
+  <p>
+    Powered by <a href="https://astro.build"><u>Astro</u></a> and <a href="https://openai.com"><u>GPT-5.3-Codex</u></a>.
+  </p>
 </footer>

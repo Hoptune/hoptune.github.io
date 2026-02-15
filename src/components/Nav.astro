@@ -1,10 +1,9 @@
 ---
-const pathname = Astro.url.pathname;
 const links = [
-  { href: "/", label: "About Me" },
-  { href: "/research", label: "Research" },
-  { href: "/publications", label: "Publications" },
-  { href: "/cv", label: "CV" }
+  { href: "/#about", label: "About Me" },
+  { href: "/#research", label: "Research" },
+  { href: "/#publications", label: "Publications" },
+  { href: "/#cv", label: "CV" }
 ];
 ---
 
@@ -16,14 +15,11 @@ const links = [
 
   <ul class="desktop-links">
     {
-      links.map((link) => {
-        const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
-        return (
-          <li>
-            <a href={link.href} aria-current={isActive ? "page" : undefined}>{link.label}</a>
-          </li>
-        );
-      })
+      links.map((link) => (
+        <li>
+          <a href={link.href}>{link.label}</a>
+        </li>
+      ))
     }
   </ul>
 
@@ -31,14 +27,11 @@ const links = [
     <summary aria-label="Open menu"><span class="hamburger-icon" aria-hidden="true"></span></summary>
     <ul>
       {
-        links.map((link) => {
-          const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
-          return (
-            <li>
-              <a href={link.href} aria-current={isActive ? "page" : undefined}>{link.label}</a>
-            </li>
-          );
-        })
+        links.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))
       }
     </ul>
   </details>
@@ -49,6 +42,7 @@ const links = [
     const init = () => {
       const menus = Array.from(document.querySelectorAll(".mobile-menu"));
       if (!menus.length) return;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       const closeMenu = (menu) => {
         menu.removeAttribute("open");
@@ -56,10 +50,65 @@ const links = [
         if (summary instanceof HTMLElement) summary.blur();
       };
 
+      const easeInOutQuad = (value) => {
+        if (value < 0.5) return 2 * value * value;
+        return 1 - Math.pow(-2 * value + 2, 2) / 2;
+      };
+
+      const smoothScrollTo = (targetY, duration = 620) => {
+        const startY = window.scrollY;
+        const delta = targetY - startY;
+        if (Math.abs(delta) < 1) return;
+
+        let startTime = null;
+        const frame = (time) => {
+          if (startTime === null) startTime = time;
+          const elapsed = time - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = easeInOutQuad(progress);
+          window.scrollTo(0, startY + delta * eased);
+          if (progress < 1) requestAnimationFrame(frame);
+        };
+
+        requestAnimationFrame(frame);
+      };
+
+      const getTopOffset = (target) => {
+        const nav = document.querySelector(".site-nav");
+        const navHeight = nav instanceof HTMLElement ? nav.getBoundingClientRect().height : 0;
+        return Math.max(0, window.scrollY + target.getBoundingClientRect().top - navHeight - 10);
+      };
+
+      const handleAnchorScroll = (event) => {
+        const link = event.currentTarget;
+        if (!(link instanceof HTMLAnchorElement)) return;
+
+        const url = new URL(link.href, window.location.href);
+        if (window.location.pathname !== "/" || url.pathname !== "/" || !url.hash) return;
+
+        const target = document.querySelector(url.hash);
+        if (!(target instanceof HTMLElement)) return;
+
+        event.preventDefault();
+        const targetY = url.hash === "#about" ? 0 : getTopOffset(target);
+
+        if (prefersReducedMotion) {
+          window.scrollTo(0, targetY);
+        } else {
+          smoothScrollTo(targetY);
+        }
+
+        history.replaceState(null, "", url.hash);
+      };
+
       menus.forEach((menu) => {
         menu.querySelectorAll("a").forEach((link) => {
           link.addEventListener("click", () => closeMenu(menu));
         });
+      });
+
+      document.querySelectorAll(".site-nav a[href*=\"#\"]").forEach((link) => {
+        link.addEventListener("click", handleAnchorScroll);
       });
 
       document.addEventListener("pointerdown", (event) => {

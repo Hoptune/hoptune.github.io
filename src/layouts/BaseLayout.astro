@@ -28,7 +28,7 @@ const isHomePage = Astro.url.pathname === "/";
       <main>
         <slot />
       </main>
-      {!isHomePage && <Footer />}
+      <Footer />
     </div>
   </body>
 </html>

@@ -15,37 +15,27 @@ const isFirstAuthor = (firstAuthor: string | undefined): boolean => {
 const firstAuthorPapers = publications.filter(
   (pub) => pub.tags.some((tag) => tag.toLowerCase() === "mefirst") || isFirstAuthor(pub.authors[0])
 );
-const otherPapers = publications.filter(
-  (pub) => !pub.tags.some((tag) => tag.toLowerCase() === "mefirst") && !isFirstAuthor(pub.authors[0])
-);
+const scholarUrl = profile.socials.googleScholar || "https://scholar.google.com/citations?user=rYjyXBQAAAAJ";
+const adsUrl = "https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-4585-3985&sort=date+desc";
 ---
 
 <BaseLayout
   title="Publications"
-  description="Peer-reviewed publications and selected preprints."
+  description="First-author publications."
   canonicalPath="/publications"
 >
   <section>
-    <h1>Publications</h1>
+    <h1>Selected Publications</h1>
     <p>
-      Google Scholar:{" "}
-      <a href={profile.socials.googleScholar || "https://scholar.google.com/citations?user=rYjyXBQAAAAJ"}>
-        {profile.socials.googleScholar || "https://scholar.google.com/citations?user=rYjyXBQAAAAJ"}
-      </a>
+      See <a href={scholarUrl}><u>Google Scholar</u></a> or <a href={adsUrl}><u>ADS library</u></a> for a full list.
     </p>
   </section>
 
   <section>
-    <h2>First-Author</h2>
     {firstAuthorPapers.length > 0 ? (
       <PublicationList items={firstAuthorPapers} />
     ) : (
       <p>No first-author papers listed yet.</p>
     )}
-  </section>
-
-  <section>
-    <h2>Others</h2>
-    {otherPapers.length > 0 ? <PublicationList items={otherPapers} /> : <p>No additional papers listed.</p>}
   </section>
 </BaseLayout>
