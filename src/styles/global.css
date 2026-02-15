@@ -383,25 +383,34 @@ body.home-page .home-hero {
   color: inherit;
   border: 2px solid #111111;
   border-radius: 10px;
-  background: var(--bg);
+  background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
   overflow: hidden;
   text-decoration: none;
-  transition: background-color 140ms ease, border-color 140ms ease;
+  box-shadow:
+    0 1px 0 rgba(17, 17, 17, 0.2),
+    0 8px 18px rgba(17, 17, 17, 0.1);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .research-card:hover,
 .research-card:focus-visible {
   border-color: #111111;
-  background: var(--bg);
+  background: linear-gradient(180deg, #ffffff 0%, #f4f4f4 100%);
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(17, 17, 17, 0.24),
+    0 14px 28px rgba(17, 17, 17, 0.14);
   text-decoration: none;
 }
 
 .research-card-figure {
   width: calc(100% - 4.4rem);
   margin: 0.55rem auto 0;
-  aspect-ratio: 16 / 10;
   height: auto;
-  object-fit: contain;
   background-color: transparent;
   display: block;
 }
@@ -409,7 +418,7 @@ body.home-page .home-hero {
 .research-card-figure-placeholder {
   width: calc(100% - 4.4rem);
   margin: 0.55rem auto 0;
-  aspect-ratio: 16 / 10;
+  min-height: 88px;
   background: repeating-linear-gradient(
     -45deg,
     rgba(17, 17, 17, 0.08),
@@ -425,6 +434,8 @@ body.home-page .home-hero {
 
 .research-card-body {
   padding: 0.55rem 0.6rem 0.65rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.03) 0%, rgba(17, 17, 17, 0) 45%);
 }
 
 .research-card-body h3 {
@@ -461,6 +472,10 @@ body.home-page .home-hero {
   .research-card {
     width: min(100%, 30rem);
     margin-inline: auto;
+  }
+
+  .research-detail-figure {
+    max-width: 100%;
   }
 }
 
