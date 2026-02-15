@@ -11,7 +11,7 @@ figureMaxWidth: 50%
 ## Highlights
 
 - We develop a method to directly measure galaxy HOD from group–galaxy cross-correlation and group weak lensing;
-- Applying our method to DESI DR1 and dividing the groups into different environments, we find groups living in different environments host the same number of galaxies, indicating no galaxy assembly bias.
+- Applying our method to DESI DR1 and dividing the groups into different environments, we find groups living in different environments host the same number of galaxies (as shown in the figure), indicating no galaxy assembly bias.
 
 ## Reference
 - [<u>ADS Link</u>](https://ui.adsabs.harvard.edu/abs/2025arXiv251020896S/abstract)
