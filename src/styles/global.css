@@ -784,6 +784,11 @@ body.home-page .home-hero {
   margin-top: 0.22rem;
 }
 
+.pub-links a {
+  text-decoration: underline;
+  text-underline-offset: 0.18rem;
+}
+
 .site-footer {
   margin-top: 0.9rem;
   padding-top: 0.9rem;
