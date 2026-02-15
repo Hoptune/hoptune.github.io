@@ -10,9 +10,9 @@ figureMaxWidth: 50%
 
 ## Highlights
 
-- We find the BOSS LOWZ galaxies have spurious correlations on large-scales, implying potential systematics during the target selection and that the galaxy bias $b_g$ measured from clustering may be questionable;
+- We find the BOSS LOWZ galaxies have spurious correlations on large-scales, implying potential systematics during the target selection and that the galaxy bias $b_g$ inferred from clustering may be questionable;
 - We develop a method to independently measure $b_g$ from cluster–galaxy cross-correlation, which helps to break the degeneracy between $b_g$ and $\sigma_8$ in $2\times2{\rm pt}$ analysis;
-- After including the independent bias measured from cluster–galaxy cross-correlation, we find the combination of the data vector still prefers a <i>Planck</i> cosmology — despite the $b_g$ measured from clustering and lensing would agree better under a low-$\sigma_8$ cosmology, both of them will be in strong tension with the bias measured from cluster–galaxy cross-correlation.
+- After including the independent bias measured from cluster–galaxy cross-correlation, we find the combination of the data vector still prefers a <i>Planck</i> cosmology — despite the $b_g$ measured from clustering and lensing would agree better under a low-$\sigma_8$ cosmology, both of them will be in strong tension with the $b_g$ measured from cluster–galaxy cross-correlation.
 
 ## Reference
 - [<u>ADS Link</u>](https://ui.adsabs.harvard.edu/abs/2023ApJ...950L..15S)

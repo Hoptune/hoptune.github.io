@@ -4,6 +4,14 @@
 
 Use this checklist whenever you manually update the website.
 
+### 0) Deploy command meaning
+
+When the user says "deploy the website", interpret it as running the full deploy workflow:
+
+- Run the full local deploy build process (`npm run build`, including `prebuild` steps)
+- Commit all intended website changes
+- Push to `origin/main`
+
 ### 1) Update static website files
 
 Update content/assets in:
