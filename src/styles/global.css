@@ -259,6 +259,7 @@ main > section + article {
 
 .home-hero {
   min-height: calc(100vh - 6rem);
+  min-height: calc(100svh - 6rem);
   justify-content: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -398,7 +399,9 @@ body.home-page .home-hero {
 .research-card-figure {
   width: calc(100% - 4.4rem);
   margin: 0.55rem auto 0;
+  aspect-ratio: 16 / 10;
   height: auto;
+  object-fit: contain;
   background-color: transparent;
   display: block;
 }
@@ -406,7 +409,7 @@ body.home-page .home-hero {
 .research-card-figure-placeholder {
   width: calc(100% - 4.4rem);
   margin: 0.55rem auto 0;
-  min-height: 88px;
+  aspect-ratio: 16 / 10;
   background: repeating-linear-gradient(
     -45deg,
     rgba(17, 17, 17, 0.08),
@@ -781,7 +784,8 @@ body.home-page .home-hero {
 
 @media (max-width: 860px) {
   body.home-page .home-hero {
-    min-height: calc(100dvh - 4.75rem);
+    min-height: calc(100vh - 4.75rem);
+    min-height: calc(100svh - 4.75rem);
     padding-top: 0;
     padding-bottom: 0;
   }
