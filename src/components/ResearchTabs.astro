@@ -223,6 +223,23 @@ const categories = await Promise.all(
           });
         };
 
+        const preloadTabImages = () => {
+          const urls = new Set();
+          root.querySelectorAll("img.research-card-figure[src]").forEach((img) => {
+            if (!(img instanceof HTMLImageElement)) return;
+            const src = img.currentSrc || img.src;
+            if (src) urls.add(src);
+            // Prioritize tab images after initial paint to avoid delayed first switch.
+            if (img.loading === "lazy") img.loading = "eager";
+          });
+
+          urls.forEach((src) => {
+            const preloader = new Image();
+            preloader.decoding = "async";
+            preloader.src = src;
+          });
+        };
+
         measurePanelHeight();
         let lastViewportWidth = window.innerWidth;
         let resizeFrame = null;
@@ -273,6 +290,13 @@ const categories = await Promise.all(
             }
           });
         });
+
+        const queuePreload = () => preloadTabImages();
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(queuePreload, { timeout: 1200 });
+        } else {
+          setTimeout(queuePreload, 120);
+        }
 
         root.dataset.ready = "true";
       });
