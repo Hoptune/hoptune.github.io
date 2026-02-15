@@ -97,6 +97,19 @@ Rules:
 - Use `keywords = {..., mefirst}` for first-author tagging when needed
 - Do not create a separate website BibTeX source
 
+### 3.1) Verify publication counts and first-author tags (required)
+
+Before deploy, check both files:
+
+- `cv/sections/publications.tex`
+- `cv/sections/papers.bib`
+
+Checklist:
+
+- Confirm `publications.tex` uses automatic counters in the section title (not hardcoded numbers)
+- Confirm first-author papers in `papers.bib` include `mefirst` in `keywords`
+- Confirm non-first-author papers do not include `mefirst`
+
 ### 4) Sync CV page summary with LaTeX updates
 
 When education/experience changes in LaTeX, also update:
