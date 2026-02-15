@@ -96,6 +96,16 @@ Then sync generated CV PDF to website:
 cp cv/cv.pdf public/cv.pdf
 ```
 
+### 2.1) CV download file sync check (required)
+
+After every CV LaTeX build, always update:
+
+- `public/cv.pdf`
+
+Reason:
+
+- The website download button serves `public/cv.pdf`, not files inside `cv/`.
+
 ### 3) Update publications
 
 Website publications must come from:
