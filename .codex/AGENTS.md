@@ -54,6 +54,18 @@ Deploy/build requirement:
 - `npm run build` must be used for deploy; it runs preprocessing automatically via `prebuild`
 - Do not bypass `prebuild` during deployment
 
+### 1.3) Research markdown consistency check (required)
+
+For files in:
+
+- `src/content/researchProjects/*.md`
+
+Checklist:
+
+- Keep each project filename unique (content `id` comes from filename/slug); do not create duplicate slugs
+- Card `summary` supports MathJax LaTeX. Use `$...$` for inline math and `$$...$$` for display math
+- Keep `figureMaxWidth` for desktop/tablet tuning; mobile detail pages force figure width to 100%
+
 ### 2) Update and compile CV (LaTeX)
 
 CV source:

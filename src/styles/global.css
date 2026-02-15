@@ -473,10 +473,6 @@ body.home-page .home-hero {
     width: min(100%, 30rem);
     margin-inline: auto;
   }
-
-  .research-detail-figure {
-    max-width: 100%;
-  }
 }
 
 .research-detail {
@@ -506,6 +502,13 @@ body.home-page .home-hero {
   font-size: 0.92rem;
   width: 100%;
   text-align: center;
+}
+
+@media (max-width: 640px) {
+  .research-detail .research-detail-figure {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .publications-window {

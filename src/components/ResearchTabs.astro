@@ -100,7 +100,7 @@ const categories = await Promise.all(
                     )}
                     <div class="research-card-body">
                       <h3>{project.title}</h3>
-                      {project.summary && <p>{project.summary}</p>}
+                      {project.summary && <p class="research-card-summary">{project.summary}</p>}
                       <span class="research-card-cta">Read details</span>
                     </div>
                   </a>
@@ -121,6 +121,49 @@ const categories = await Promise.all(
     const init = () => {
       const roots = Array.from(document.querySelectorAll("[data-research-tabs]"));
       if (!roots.length) return;
+
+      const ensureMathJax = (nodes) => {
+        if (!nodes.length) return;
+
+        const renderMath = () => {
+          const mj = window.MathJax;
+          if (!mj || typeof mj.typesetPromise !== "function") return;
+          mj.typesetPromise(nodes).catch(() => {});
+        };
+
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex: {
+              inlineMath: [
+                ["$", "$"],
+                ["\\(", "\\)"]
+              ],
+              displayMath: [
+                ["$$", "$$"],
+                ["\\[", "\\]"]
+              ]
+            }
+          };
+        }
+
+        if (window.MathJax && typeof window.MathJax.typesetPromise === "function") {
+          renderMath();
+          return;
+        }
+
+        const existingScript = document.querySelector("script[data-mathjax='true']");
+        if (existingScript instanceof HTMLScriptElement) {
+          existingScript.addEventListener("load", renderMath, { once: true });
+          return;
+        }
+
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+        script.async = true;
+        script.dataset.mathjax = "true";
+        script.onload = renderMath;
+        document.head.appendChild(script);
+      };
 
       roots.forEach((root) => {
         if (!(root instanceof HTMLElement) || root.dataset.bound === "true") return;
@@ -233,6 +276,9 @@ const categories = await Promise.all(
 
         root.dataset.ready = "true";
       });
+
+      const summaryNodes = Array.from(document.querySelectorAll(".research-card-summary"));
+      ensureMathJax(summaryNodes);
     };
 
     init();

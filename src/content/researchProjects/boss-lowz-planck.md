@@ -1,7 +1,7 @@
 ---
 title: Is the Large-scale Structure Traced by the BOSS LOWZ Galaxies Consistent with Planck?
 category: observational-cosmology
-summary: A consistency test between BOSS LOWZ large-scale structure measurements and Planck cosmology constraints.
+summary: We introduce cluster–galaxy cross-correlation into 2x2pt analysis and find the combination of them prefer Planck over low $S_8$ cosmology.
 order: 1
 figure: "/images/research/lowz_planck.png"
 figureCaption: Comparison between galaxy biases measured from the cluster-based method (green vertical band), galaxy clustering (blue circles), and g–g lensing (red squares), under four different cosmologies, including <i>Planck</i> ($A=1.0$), two low-$\sigma_8$ cosmologies with $A= 0.9$ and $0.8$, and a representative low-$S_8$ cosmology that resolves the clustering–lensing mismatch.
