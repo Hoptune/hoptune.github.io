@@ -9,6 +9,8 @@ Use this checklist whenever you manually update the website.
 When the user says "deploy the website", interpret it as running the full deploy workflow:
 
 - Run the full local deploy build process (`npm run build`, including `prebuild` steps)
+- Always sync the latest LaTeX-generated CV to the website download file:
+  `cp cv/cv.pdf public/cv.pdf`
 - Commit all intended website changes
 - Push to `origin/main`
 
@@ -113,6 +115,7 @@ After every CV LaTeX build, always update:
 Reason:
 
 - The website download button serves `public/cv.pdf`, not files inside `cv/`.
+- During website deploy, run the sync command again to guarantee the deployed CV is current.
 
 ### 3) Update publications
 
