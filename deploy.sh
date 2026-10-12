@@ -36,6 +36,15 @@ fi
 printf '%s\n' 'Building CV...'
 pushd cv >/dev/null
 if command -v latexmk >/dev/null 2>&1; then
+  # A stale .fdb_latexmk can make latexmk schedule Biber before pdfLaTeX
+  # when cv.bcf has been cleaned. Bootstrap the control file first.
+  if [[ ! -f cv.bcf ]]; then
+    require_command pdflatex
+    require_command biber
+    printf '%s\n' 'Regenerating missing cv.bcf...'
+    pdflatex -interaction=nonstopmode -halt-on-error cv.tex
+    biber cv
+  fi
   latexmk -pdf -interaction=nonstopmode -halt-on-error cv.tex
 else
   require_command pdflatex
@@ -44,6 +53,10 @@ else
   biber cv
   pdflatex -interaction=nonstopmode -halt-on-error cv.tex
   pdflatex -interaction=nonstopmode -halt-on-error cv.tex
+fi
+[[ -s cv.bbl ]] || die "Biber produced an empty cv.bbl"
+if [[ -f cv.blg ]] && grep -Fq 'ERROR -' cv.blg; then
+  die "Biber reported an error in cv/cv.blg"
 fi
 popd >/dev/null
 
