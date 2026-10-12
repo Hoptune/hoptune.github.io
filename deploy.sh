@@ -35,16 +35,12 @@ fi
 
 printf '%s\n' 'Building CV...'
 pushd cv >/dev/null
+readonly CV_BUILD_DIR="$PWD/.deploy-build/work"
+mkdir -p "$CV_BUILD_DIR/sections"
+cp cv.tex simplecv.sty "$CV_BUILD_DIR/"
+cp sections/*.tex sections/papers.bib "$CV_BUILD_DIR/sections/"
+pushd "$CV_BUILD_DIR" >/dev/null
 if command -v latexmk >/dev/null 2>&1; then
-  # A stale .fdb_latexmk can make latexmk schedule Biber before pdfLaTeX
-  # when cv.bcf has been cleaned. Bootstrap the control file first.
-  if [[ ! -f cv.bcf ]]; then
-    require_command pdflatex
-    require_command biber
-    printf '%s\n' 'Regenerating missing cv.bcf...'
-    pdflatex -interaction=nonstopmode -halt-on-error cv.tex
-    biber cv
-  fi
   latexmk -pdf -interaction=nonstopmode -halt-on-error cv.tex
 else
   require_command pdflatex
@@ -54,10 +50,12 @@ else
   pdflatex -interaction=nonstopmode -halt-on-error cv.tex
   pdflatex -interaction=nonstopmode -halt-on-error cv.tex
 fi
-[[ -s cv.bbl ]] || die "Biber produced an empty cv.bbl"
+[[ -s cv.bbl ]] || die "Biber produced an empty isolated-build cv.bbl"
 if [[ -f cv.blg ]] && grep -Fq 'ERROR -' cv.blg; then
-  die "Biber reported an error in cv/cv.blg"
+  die "Biber reported an error in the isolated-build cv.blg"
 fi
+popd >/dev/null
+cp "$CV_BUILD_DIR/cv.pdf" cv.pdf
 popd >/dev/null
 
 cp cv/cv.pdf public/cv.pdf

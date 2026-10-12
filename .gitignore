@@ -1,6 +1,17 @@
 node_modules/
 .astro/
 dist/
+cv/.deploy-build/
+cv/*.aux
+cv/*.bbl
+cv/*.bcf
+cv/*.blg
+cv/*.fdb_latexmk
+cv/*.fls
+cv/*.log
+cv/*.out
+cv/*.run.xml
+cv/*.synctex.gz
 .DS_Store
 .env
 .env.*
