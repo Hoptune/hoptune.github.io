@@ -19,6 +19,265 @@
 
 \refsection{0}
   \datalist[entry]{ydnt/global//global/global}
+    \entry{Shao2026}{article}{}
+      \name{author}{11}{}{%
+        {{hash=fb67eebe478b7906b869604aceb17dc3}{%
+           family={\myname},
+           familyi={\bibinitperiod}}}%
+        {{hash=1000a0ad5fd8ffeab652e61b96115d09}{%
+           family={{Zu}},
+           familyi={Z\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=22d97c7cfff42911eab279d2e78e75a7}{%
+           family={{Salcedo}},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8b3d031e33fa8ec00b3b97374ef74c0a}{%
+           family={{Lin}},
+           familyi={L\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d90f53b6c47cfea3540b0fb9da23dbd7}{%
+           family={{Chen}},
+           familyi={C\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=86c6b1889f4025da917318172a7c2c4f}{%
+           family={{Xu}},
+           familyi={X\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=36cd9796ccf6561ae192343eaa81d932}{%
+           family={{Hua}},
+           familyi={H\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5ef1bb6432b198f2cf72e2af78895a1d}{%
+           family={{Zhai}},
+           familyi={Z\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=4feef1103460c1fbe23560ecae987cb5}{%
+           family={{Aguilar}},
+           familyi={A\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1afb70f4636d301d395bf54278003b88}{%
+           family={{Ahlen}},
+           familyi={A\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{0f9d57562e245eb7478c02902ba81551}
+      \strng{fullhash}{cfc15df14d12b3ce9ccfb6df60a7f5fa}
+      \strng{bibnamehash}{cfc15df14d12b3ce9ccfb6df60a7f5fa}
+      \strng{authorbibnamehash}{cfc15df14d12b3ce9ccfb6df60a7f5fa}
+      \strng{authornamehash}{0f9d57562e245eb7478c02902ba81551}
+      \strng{authorfullhash}{cfc15df14d12b3ce9ccfb6df60a7f5fa}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{arXiv:2609.04351}
+      \field{eprintclass}{astro-ph.GA}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{arXiv e-prints}
+      \field{month}{9}
+      \field{title}{{Extending the Stellar-to-Halo Mass Relation to Dwarf Galaxies with DESI DR1}}
+      \field{year}{2026}
+      \true{nocite}
+      \field{pages}{arXiv:2609.04351}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.48550/arXiv.2609.04351
+      \endverb
+      \verb{eprint}
+      \verb 2609.04351
+      \endverb
+      \keyw{Astrophysics of Galaxies,mefirst}
+    \endentry
+    \entry{Clarke2026}{article}{}
+      \name{author}{11}{}{%
+        {{hash=6ab9b3bbdb8968f0d8bb3f873e52376a}{%
+           family={{Clarke}},
+           familyi={C\bibinitperiod},
+           given={Leonardo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=cdf0c259d9d6b4c51073999f7f51c9e0}{%
+           family={{Shapley}},
+           familyi={S\bibinitperiod},
+           given={Alice\bibnamedelima E.},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=112885ed314380a18898095d64c7c681}{%
+           family={{Shao}},
+           familyi={S\bibinitperiod},
+           given={Zhiwei},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=17d7babe376ab758cfaf546af9771c33}{%
+           family={{Pascale}},
+           familyi={P\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f31adb91e987698eb154b868b1c53fd8}{%
+           family={{Sanders}},
+           familyi={S\bibinitperiod},
+           given={Ryan\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=2fb2e17b7b459833d36e36f2cb5499cc}{%
+           family={{Reddy}},
+           familyi={R\bibinitperiod},
+           given={Naveen\bibnamedelima A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=45a1ad53126dff9f00e5f2608cd34750}{%
+           family={{Jones}},
+           familyi={J\bibinitperiod},
+           given={Tucker},
+           giveni={T\bibinitperiod}}}%
+        {{hash=9af515daafc89f55cbf9957caad4a0cd}{%
+           family={{Katz}},
+           familyi={K\bibinitperiod},
+           given={Harley},
+           giveni={H\bibinitperiod}}}%
+        {{hash=4aeab9bce541b01c4ffaec48f8268148}{%
+           family={{Lam}},
+           familyi={L\bibinitperiod},
+           given={Natalie},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ae84004f7ffe9dc0c051e125b48c8b20}{%
+           family={{Karthikeyan}},
+           familyi={K\bibinitperiod},
+           given={Shreya},
+           giveni={S\bibinitperiod}}}%
+        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{6876576430f179542a91b2e810619a28}
+      \strng{fullhash}{139d6f7547016fbef42b2e095c6affd7}
+      \strng{bibnamehash}{139d6f7547016fbef42b2e095c6affd7}
+      \strng{authorbibnamehash}{139d6f7547016fbef42b2e095c6affd7}
+      \strng{authornamehash}{6876576430f179542a91b2e810619a28}
+      \strng{authorfullhash}{139d6f7547016fbef42b2e095c6affd7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{arXiv:2609.32045}
+      \field{eprintclass}{astro-ph.GA}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{arXiv e-prints}
+      \field{month}{9}
+      \field{title}{{The AURORA Survey: Determining the Production Mechanism for OI $\lambda$8449 Emission in Star-forming Galaxies at Cosmic Noon}}
+      \field{year}{2026}
+      \true{nocite}
+      \field{pages}{arXiv:2609.32045}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.48550/arXiv.2609.32045
+      \endverb
+      \verb{eprint}
+      \verb 2609.32045
+      \endverb
+      \keyw{Astrophysics of Galaxies}
+    \endentry
+    \entry{Scholte2026}{article}{}
+      \name{author}{11}{}{%
+        {{hash=976709290b7ebe029a5a522d56817182}{%
+           family={{Scholte}},
+           familyi={S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=afd868246f79ebd36a5da03c621c47ad}{%
+           family={{Cullen}},
+           familyi={C\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=fb4a773ba819bd32787ca8820937e443}{%
+           family={{Moustakas}},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d4e3e1d597560c070af378a7b28d382c}{%
+           family={{Zou}},
+           familyi={Z\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=7bfc6430c91bc40ee24bbd50716531b5}{%
+           family={{Saintonge}},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=96633d2d7c31bb7cc5b76aad94ab7fe0}{%
+           family={{Arellano-Cordova}},
+           familyi={A\bibinitperiod},
+           given={K.\bibnamedelimi Z.},
+           giveni={K\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=96ab03a5a8f3f06292b1be471065c50f}{%
+           family={{Stanton}},
+           familyi={S\bibinitperiod},
+           given={T.\bibnamedelimi M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=9533f7e12e6e0ac18783b48b7fde62f0}{%
+           family={{Andrews}},
+           familyi={A\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=fc6808b0f9d03dbe7889b664587819ab}{%
+           family={{Sui}},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4feef1103460c1fbe23560ecae987cb5}{%
+           family={{Aguilar}},
+           familyi={A\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{b783066905d01389b56e94c3410d99fa}
+      \strng{fullhash}{a0c91a1d8d2bc81d691c40a88802cf29}
+      \strng{bibnamehash}{a0c91a1d8d2bc81d691c40a88802cf29}
+      \strng{authorbibnamehash}{a0c91a1d8d2bc81d691c40a88802cf29}
+      \strng{authornamehash}{b783066905d01389b56e94c3410d99fa}
+      \strng{authorfullhash}{a0c91a1d8d2bc81d691c40a88802cf29}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{stag1381}
+      \field{eprintclass}{astro-ph.GA}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{\mnras}
+      \field{month}{9}
+      \field{number}{1}
+      \field{title}{{Electron temperature relations and the direct N, O, Ne, S, and Ar abundances of 49 959 star-forming galaxies in DESI data release 2}}
+      \field{volume}{551}
+      \field{year}{2026}
+      \true{nocite}
+      \field{pages}{stag1381}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1093/mnras/stag1381
+      \endverb
+      \verb{eprint}
+      \verb 2601.02463
+      \endverb
+      \keyw{galaxies: abundances,galaxies: general,galaxies: ISM,Astrophysics of Galaxies}
+    \endentry
     \entry{Shao2025}{article}{}
       \name{author}{11}{}{%
         {{hash=fb67eebe478b7906b869604aceb17dc3}{%
@@ -81,6 +340,7 @@
       \strng{authorbibnamehash}{225503e66c5df8390e0e349021d73e8f}
       \strng{authornamehash}{28d007b6c7da0b7e609f8f0c59df86fd}
       \strng{authorfullhash}{225503e66c5df8390e0e349021d73e8f}
+      \field{extraname}{2}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
